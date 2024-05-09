@@ -1,6 +1,15 @@
+import UseAuth from "../hookPersonal/UseAuth";
+
 
 
 const MyQueriesPage = () => {
+
+    const { data } = UseAuth();
+
+    console.log(data);
+
+
+
     return (
         <div>
 
