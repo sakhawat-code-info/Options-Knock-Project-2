@@ -8,6 +8,7 @@ import MyQueriesPage from "../Pages/MyQueriesPage";
 import MyRecommendationsPage from "../Pages/MyRecommendationsPage";
 import LoginPage from "../Pages/LoginPage";
 import RegisterPage from "../Pages/RegisterPage";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -29,11 +30,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/myQueries",
-                element: <MyQueriesPage />,
+                element: <PrivateRoute><MyQueriesPage /></PrivateRoute>,
             },
             {
                 path: "/myRecommendations",
-                element: <MyRecommendationsPage />,
+                element: <PrivateRoute><MyRecommendationsPage /></PrivateRoute>,
             },
             {
                 path: "/login",

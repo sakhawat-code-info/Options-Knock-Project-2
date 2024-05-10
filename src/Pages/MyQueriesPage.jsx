@@ -63,15 +63,7 @@ const MyQueriesPage = () => {
                             </button>
                         </div>
 
-
-
-
                     </div>
-
-
-
-
-
 
                 </form>
             </div>

@@ -1,7 +1,77 @@
-import { Link } from "react-router-dom";
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import UseAuth from "../hookPersonal/UseAuth";
+import Swal from "sweetalert2";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LoginPage = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const sendPersonDestination = location?.state || '/';
+
+    const { loginWithGoogle, setUser, loginUser } = UseAuth();
+
+    const handleGoogleLogin = () => {
+        loginWithGoogle()
+            .then((result) => {
+                setUser(result.user);
+                Swal.fire({
+                    // position: "top-end",
+                    icon: "success",
+                    title: "Login Successful",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                navigate(sendPersonDestination);
+            }).catch((error) => {
+                console.log(error.message);
+            });
+
+    }
+
+    const handleLoginForm = (e) => {
+        e.preventDefault();
+
+        const form = e.target;
+
+        const email = form.email.value;
+        const password = form.password.value;
+
+
+        loginUser(email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                setUser(user);
+                Swal.fire({
+                    // position: "top-end",
+                    icon: "success",
+                    title: "Login Successful",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                navigate(sendPersonDestination);
+            })
+            .catch((error) => {
+                toast.error("Email OR Password is Incorrect. Try again !!!");
+                console.log(error.message);
+                // ..
+            });
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         <div className="py-16">
             <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
@@ -37,7 +107,7 @@ const LoginPage = () => {
                         className="flex items-center justify-center mt-5 flex-wrap"
                     >
                         <button
-                            href="#"
+                            onClick={handleGoogleLogin}
                             className="hover:scale-105 ease-in-out duration-300 shadow-lg p-2 rounded-lg m-1"
                         >
                             <img
@@ -107,7 +177,7 @@ const LoginPage = () => {
                     </div>
 
 
-                    <form>
+                    <form onSubmit={handleLoginForm}>
                         <div className="mt-4">
                             <label className="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
                             <input className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none" type="email" name='email' required />
@@ -135,6 +205,7 @@ const LoginPage = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
