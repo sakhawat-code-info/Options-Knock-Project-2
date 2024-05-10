@@ -10,6 +10,7 @@ import LoginPage from "../Pages/LoginPage";
 import RegisterPage from "../Pages/RegisterPage";
 import PrivateRoute from "./PrivateRoute";
 import AddQueriesPage from "../Pages/AddQueriesPage";
+import QueryDetailsPage from "../Pages/QueryDetailsPage";
 
 export const router = createBrowserRouter([
     {
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
             {
                 path: "/queries",
                 element: <QueriesPage />,
+            },
+            {
+                path: "/queryDetails",
+                element: <PrivateRoute><QueryDetailsPage /></PrivateRoute>,
             },
             {
                 path: "/recommendationsForMe",
