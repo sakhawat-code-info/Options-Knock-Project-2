@@ -15,7 +15,7 @@ const Banner = () => {
                         </div>
                         <Link to={'/queries'} rel="noreferrer"
                             className="text-black bg-white hover:bg-gray-50 px-4 py-2 rounded-lg w-fit  ease duration-300 flex gap-1 items-center group">
-                            <span>Buy now</span>
+                            <span>Queries Now</span>
                             <svg data-v-e660a7a7="" xmlns="http://www.w3.org/2000/svg"
                                 aria-hidden="true" role="img"
                                 className="group-hover:translate-x-1 transition-transform ease duration-200" width="1em" height="1em"

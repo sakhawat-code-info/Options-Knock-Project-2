@@ -1,22 +1,44 @@
 import { Link } from "react-router-dom";
+import UseAuth from "../hookPersonal/UseAuth";
 
 
 const AddQueriesPage = () => {
 
+    const { user } = UseAuth();
+
+    const currentDate = new Date(Date.now());
+    const formattedDate = currentDate.toLocaleDateString('en-US');
 
 
-    // const queryData = {
-    //     productName,
-    //     productBrand,
-    //     productImageURL,
-    //     queryTitle,
-    //     boycottingReasonDetails,
-    //     userEmail,
-    //     name,
-    //     image,
-    //     dateTime,
-    //     recommendationCount
-    // }
+    const handleAddQuery = (e) => {
+        e.preventDefault();
+        const form = e.target;
+
+        const productName = form.productName.value;
+        const productBrand = form.productBrand.value;
+        const productImageURL = form.productImageURL.value;
+        const queryTitle = form.queryTitle.value;
+        const boycottingReasonDetails = form.boycottingReasonDetails.value;
+        const userEmail = user.email;
+        const name = user.displayName;
+        const image = user.photoURL;
+        const dateTime = formattedDate;
+        const recommendationCount = 0;
+
+        console.log(
+            productName,
+            productBrand,
+            productImageURL,
+            queryTitle,
+            boycottingReasonDetails,
+            userEmail,
+            name,
+            image,
+            dateTime,
+            recommendationCount
+        )
+    }
+
 
 
 
@@ -24,7 +46,7 @@ const AddQueriesPage = () => {
     return (
         <div>
             <div className="bg-white border-4 rounded-lg shadow relative m-10">
-                <form >
+                <form onSubmit={handleAddQuery}>
                     <div className="flex items-start justify-between p-5 border-b rounded-t">
                         <h3 className="text-xl font-semibold">
                             Add My Queries
@@ -52,11 +74,12 @@ const AddQueriesPage = () => {
                                 <label className="text-sm font-medium text-gray-900 block mb-2">Product Image-URL</label>
                                 <input type="text" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="photo.jpj" name="productImageURL" required />
                             </div>
-
                             <div className="col-span-6 sm:col-span-3">
-                                <label className="text-sm font-medium text-gray-900 block mb-2">Query TItle</label>
-                                <input type="text" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Query TItle" name="queryTItle" required />
+                                <label className="text-sm font-medium text-gray-900 block mb-2">Query Title</label>
+                                <input type="text" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Query TItle" name="queryTitle" required />
                             </div>
+
+
 
                             <div className="col-span-full">
                                 <label className="text-sm font-medium text-gray-900 block mb-2">Boycotting Reason Details</label>
