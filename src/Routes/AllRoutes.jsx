@@ -9,6 +9,7 @@ import MyRecommendationsPage from "../Pages/MyRecommendationsPage";
 import LoginPage from "../Pages/LoginPage";
 import RegisterPage from "../Pages/RegisterPage";
 import PrivateRoute from "./PrivateRoute";
+import AddQueriesPage from "../Pages/AddQueriesPage";
 
 export const router = createBrowserRouter([
     {
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
             {
                 path: "/myQueries",
                 element: <PrivateRoute><MyQueriesPage /></PrivateRoute>,
+            },
+            {
+                path: "/addQueries",
+                element: <PrivateRoute><AddQueriesPage /></PrivateRoute>,
             },
             {
                 path: "/myRecommendations",
