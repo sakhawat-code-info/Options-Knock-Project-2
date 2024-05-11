@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 const MyQueriesPage = () => {
 
     const { user } = UseAuth();
-    const [myQueriesData, setMyQueriesData] = useState();
+    const [myQueriesData, setMyQueriesData] = useState([]);
 
 
 
@@ -21,12 +21,13 @@ const MyQueriesPage = () => {
                 const sortByDate = [].concat(data).sort((a, b) => b.dateTime - a.dateTime);
                 setMyQueriesData(sortByDate)
             })
-    })
+    }, [myQueriesData])
 
     // console.log(myQueriesData);
 
 
     const handleDelete = (id) => {
+        // console.log('delete', id);
 
         Swal.fire({
             title: "Are you sure?",
