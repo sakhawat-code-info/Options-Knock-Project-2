@@ -3,13 +3,31 @@ import UseAuth from "../hookPersonal/UseAuth";
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineDeleteForever } from "react-icons/md";
 import { MdOutlineViewSidebar } from "react-icons/md";
+import { useEffect, useState } from "react";
 
 
 const MyQueriesPage = () => {
 
-    const { data } = UseAuth();
+    const { user } = UseAuth();
+    const [myQueriesData, setMyQueriesData] = useState();
 
-    console.log(data);
+
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/myQueries/${user.email}`)
+            .then(res => res.json())
+            .then(data => {
+                const sortByDate = [].concat(data).sort((a, b) => b.dateTime - a.dateTime);
+                setMyQueriesData(sortByDate)
+            })
+    })
+
+    console.log(myQueriesData);
+
+
+
+
+
 
 
 
@@ -44,87 +62,98 @@ const MyQueriesPage = () => {
                 </div>
             </div>
 
+            {
+                myQueriesData && <>
+                    <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
+                        <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10">
 
 
+                            {/* single content  */}
 
-            <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
-                <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10">
+                            {
+                                myQueriesData?.map(singleData =>
 
+                                    <div key={singleData._id} className="rounded overflow-hidden shadow-lg">
+                                        <a href="#"></a>
+                                        <div className="relative">
+                                            <a href="#">
+                                                <img className="w-full"
+                                                    src="https://images.pexels.com/photos/196667/pexels-photo-196667.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                                                    alt="Sunset in the mountains" />
+                                                <div
+                                                    className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                                                </div>
+                                            </a>
+                                            <a href="#!">
+                                                <div
+                                                    className="absolute bottom-0 left-0 bg-indigo-600 px-4 py-2 text-white text-sm hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                                    {singleData.productName}
+                                                </div>
+                                            </a>
+                                            <a href="!#">
+                                                <div
+                                                    className="text-sm absolute top-0 right-0 bg-indigo-600 px-4 text-white rounded-full h-16 w-16 flex flex-col items-center justify-center mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                                    <span className="font-bold">{singleData.dateTime.slice(4, 7)}</span>
+                                                    <small>{singleData.dateTime.slice(8, 10)}</small>
+                                                </div>
+                                            </a>
+                                        </div>
 
+                                        <div className="px-6 py-4">
 
-                    {/* single content  */}
-                    <div className="rounded overflow-hidden shadow-lg">
-                        <a href="#"></a>
-                        <div className="relative">
-                            <a href="#">
-                                <img className="w-full"
-                                    src="https://images.pexels.com/photos/196667/pexels-photo-196667.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
-                                    alt="Sunset in the mountains" />
-                                <div
-                                    className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
-                                </div>
-                            </a>
-                            <a href="#!">
-                                <div
-                                    className="absolute bottom-0 left-0 bg-indigo-600 px-4 py-2 text-white text-sm hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
-                                    Photos
-                                </div>
-                            </a>
-                            <a href="!#">
-                                <div
-                                    className="text-sm absolute top-0 right-0 bg-indigo-600 px-4 text-white rounded-full h-16 w-16 flex flex-col items-center justify-center mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
-                                    <span className="font-bold">27</span>
-                                    <small>March</small>
-                                </div>
-                            </a>
-                        </div>
+                                            <a href="#"
+                                                className="font-semibold text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out">
+                                                {singleData.queryTitle.slice(0, 28)} . . .
+                                            </a>
+                                            <p className="text-gray-500 text-sm">
+                                                {singleData.boycottingReasonDetails}
+                                            </p>
+                                        </div>
+                                        <div className="px-6 py-4 flex items-center justify-center gap-5">
+                                            <span href="#" className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row items-center">
+                                                <Link to={`/queryDetails/${singleData._id}`} >
+                                                    <button onClick={() => document.getElementById('my_modal_1').showModal()} className="flex items-center p-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
+                                                        <MdOutlineViewSidebar size={20} />
+                                                    </button>
+                                                </Link>
+                                                {/* <span className="ml-1">View Details</span> */}
+                                            </span>
 
-                        <div className="px-6 py-4">
+                                            <span href="#" className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row items-center">
+                                                <a >
+                                                    <button onClick={() => document.getElementById('my_modal_1').showModal()} className="flex items-center p-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
+                                                        <CiEdit size={20} />
+                                                    </button>
+                                                </a>
+                                                {/* <span className="ml-1">View Details</span> */}
+                                            </span>
 
-                            <a href="#"
-                                className="font-semibold text-lg inline-block hover:text-indigo-600 transition duration-500 ease-in-out">Best
-                                View in Newyork City</a>
-                            <p className="text-gray-500 text-sm">
-                                The city that never sleeps
-                            </p>
-                        </div>
-                        <div className="px-6 py-4 flex items-center justify-center gap-5">
-                            <span href="#" className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row items-center">
-                                <a >
-                                    <button onClick={() => document.getElementById('my_modal_1').showModal()} className="flex items-center p-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
-                                        <MdOutlineViewSidebar size={20} />
-                                    </button>
-                                </a>
-                                {/* <span className="ml-1">View Details</span> */}
-                            </span>
+                                            <span href="#" className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row items-center">
+                                                <a >
+                                                    <button onClick={() => document.getElementById('my_modal_1').showModal()} className="flex items-center p-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
+                                                        <MdOutlineDeleteForever size={20} />
+                                                    </button>
+                                                </a>
+                                                {/* <span className="ml-1">View Details</span> */}
+                                            </span>
 
-                            <span href="#" className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row items-center">
-                                <a >
-                                    <button onClick={() => document.getElementById('my_modal_1').showModal()} className="flex items-center p-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
-                                        <CiEdit size={20} />
-                                    </button>
-                                </a>
-                                {/* <span className="ml-1">View Details</span> */}
-                            </span>
-
-                            <span href="#" className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row items-center">
-                                <a >
-                                    <button onClick={() => document.getElementById('my_modal_1').showModal()} className="flex items-center p-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
-                                        <MdOutlineDeleteForever size={20} />
-                                    </button>
-                                </a>
-                                {/* <span className="ml-1">View Details</span> */}
-                            </span>
+                                        </div>
+                                    </div>)
+                            }
 
                         </div>
                     </div>
 
+                </>
+            }
 
 
 
 
-                </div>
-            </div>
+
+
+
+
 
 
 

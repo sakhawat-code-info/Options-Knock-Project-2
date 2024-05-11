@@ -7,7 +7,7 @@ const AddQueriesPage = () => {
     const { user } = UseAuth();
 
     const currentDate = new Date(Date.now());
-    const formattedDate = currentDate.toLocaleDateString('en-US');
+    // const formattedDate = currentDate.toLocaleDateString('en-US');
 
 
     const handleAddQuery = (e) => {
@@ -22,7 +22,7 @@ const AddQueriesPage = () => {
         const userEmail = user.email;
         const name = user.displayName;
         const image = user.photoURL;
-        const dateTime = formattedDate;
+        const dateTime = currentDate;
         const recommendationCount = 0;
 
         console.log(
