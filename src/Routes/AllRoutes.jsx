@@ -26,6 +26,7 @@ export const router = createBrowserRouter([
             {
                 path: "/queries",
                 element: <QueriesPage />,
+                loader: () => fetch('http://localhost:5000/allQueryData')
             },
             {
                 path: "/queryDetails/:detailsId",
