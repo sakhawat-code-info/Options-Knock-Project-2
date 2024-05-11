@@ -11,6 +11,7 @@ import RegisterPage from "../Pages/RegisterPage";
 import PrivateRoute from "./PrivateRoute";
 import AddQueriesPage from "../Pages/AddQueriesPage";
 import QueryDetailsPage from "../Pages/QueryDetailsPage";
+import UpdateQueriesPage from "../Pages/UpdateQueriesPage";
 
 export const router = createBrowserRouter([
     {
@@ -29,6 +30,11 @@ export const router = createBrowserRouter([
             {
                 path: "/queryDetails/:detailsId",
                 element: <PrivateRoute><QueryDetailsPage /></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/queryDetails/${params.detailsId}`)
+            },
+            {
+                path: "/updateQueriesPage/:detailsId",
+                element: <PrivateRoute><UpdateQueriesPage /></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/queryDetails/${params.detailsId}`)
             },
             {

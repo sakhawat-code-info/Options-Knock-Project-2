@@ -4,6 +4,7 @@ import { CiEdit } from "react-icons/ci";
 import { MdOutlineDeleteForever } from "react-icons/md";
 import { MdOutlineViewSidebar } from "react-icons/md";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 
 const MyQueriesPage = () => {
@@ -22,10 +23,44 @@ const MyQueriesPage = () => {
             })
     })
 
-    console.log(myQueriesData);
+    // console.log(myQueriesData);
 
 
+    const handleDelete = (id) => {
 
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/queryDelete/${id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+
+                        if (data.deletedCount === 1) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                        const remaining = myQueriesData.filter(item => item._id != id);
+                        setMyQueriesData(remaining);
+                    })
+
+
+            }
+        });
+
+    }
 
 
 
@@ -120,16 +155,16 @@ const MyQueriesPage = () => {
                                             </span>
 
                                             <span href="#" className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row items-center">
-                                                <a >
+                                                <Link to={`/updateQueriesPage/${singleData._id}`} >
                                                     <button onClick={() => document.getElementById('my_modal_1').showModal()} className="flex items-center p-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
                                                         <CiEdit size={20} />
                                                     </button>
-                                                </a>
+                                                </Link>
                                                 {/* <span className="ml-1">View Details</span> */}
                                             </span>
 
                                             <span href="#" className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row items-center">
-                                                <a >
+                                                <a onClick={() => handleDelete(singleData._id)} >
                                                     <button onClick={() => document.getElementById('my_modal_1').showModal()} className="flex items-center p-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
                                                         <MdOutlineDeleteForever size={20} />
                                                     </button>
