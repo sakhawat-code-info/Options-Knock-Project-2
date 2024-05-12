@@ -2,6 +2,18 @@ import { MdOutlineDeleteForever } from "react-icons/md";
 
 
 const MyRecommendationsPage = () => {
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         <div className="container w-full px-4 mx-auto sm:px-8">
             <div className="">

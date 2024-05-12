@@ -5,7 +5,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const QueriesPage = () => {
 
     const allQueryData = useLoaderData();
-    console.log(allQueryData);
+    // console.log(allQueryData);
 
 
     return (

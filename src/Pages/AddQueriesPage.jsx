@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import UseAuth from "../hookPersonal/UseAuth";
+import Swal from "sweetalert2";
 
 
 const AddQueriesPage = () => {
@@ -25,7 +26,7 @@ const AddQueriesPage = () => {
         const dateTime = currentDate;
         const recommendationCount = 0;
 
-        console.log(
+        const addQueries = {
             productName,
             productBrand,
             productImageURL,
@@ -36,7 +37,30 @@ const AddQueriesPage = () => {
             image,
             dateTime,
             recommendationCount
-        )
+        }
+        console.log(dateTime);
+
+        fetch('http://localhost:5000/addQueryData', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(addQueries),
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        // position: "top-end",
+                        icon: "success",
+                        title: "Queries Data Saved Successfully",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+                form.reset();
+            })
+
     }
 
 

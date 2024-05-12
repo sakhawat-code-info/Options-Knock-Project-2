@@ -1,12 +1,16 @@
 import { useLoaderData } from "react-router-dom";
+import UseAuth from "../hookPersonal/UseAuth";
+import Swal from "sweetalert2";
+import { useEffect, useState } from "react";
 
 
 const QueryDetailsPage = () => {
 
-
+    const { user } = UseAuth();
     const queryDetailsData = useLoaderData();
 
     const {
+        _id,
         productName,
         productBrand,
         productImageURL,
@@ -20,19 +24,83 @@ const QueryDetailsPage = () => {
     } = queryDetailsData;
 
 
+    const handleRecommendationData = (e) => {
+        e.preventDefault();
+        const form = e.target;
 
-    // // const recommendationData = {
-    // queryId,
-    //     recommendationTitle,
-    // //     recommendedProductName,
-    // //     recommendedProductImage,
-    // //     recommendedReason,
-    // //     userEmail,
-    // //     userName,
-    // //     recommenderEmail,
-    // //     recommenderName,
-    // //     currentTimeStamp
-    // // }
+        const recommendationTitle = form.recommendationTitle.value;
+        const recommendedProductName = form.recommendedProductName.value;
+        const recommendedProductImage = form.recommendedProductImage.value;
+        const recommendedReason = form.recommendedReason.value;
+        const queryId = _id;
+        const postCreatorQueryTitle = queryTitle;
+        const postCreatorProductName = productName;
+        const postCreatorUserEmail = userEmail;
+        const postCreatorUserName = name;
+        const recommenderEmail = user.email;
+        const recommenderName = user.displayName;
+        const recommenderProfileImg = user.photoURL;
+        const currentTimeStamp = new Date(Date.now());
+
+        const recommendationData = {
+            recommendationTitle,
+            recommendedProductName,
+            recommendedProductImage,
+            recommendedReason,
+            queryId,
+            postCreatorQueryTitle,
+            postCreatorProductName,
+            postCreatorUserEmail,
+            postCreatorUserName,
+            recommenderEmail,
+            recommenderName,
+            recommenderProfileImg,
+            currentTimeStamp
+        }
+        // console.log(recommendationData);
+
+        fetch('http://localhost:5000/recommendation', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(recommendationData),
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        // position: "top-end",
+                        icon: "success",
+                        title: "RecommendationData Data Saved Successfully",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+                form.reset();
+            })
+
+    }
+
+
+
+    const [recommendation, setRecommendation] = useState([]);
+
+
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/showRecommendation/${queryDetailsData._id}`)
+            .then(res => res.json())
+            .then(data => {
+                const sortByDate = [].concat(data).sort((a, b) => b.dateTime - a.dateTime);
+                setRecommendation(sortByDate)
+            })
+    }, [])
+
+
+
+    console.log(recommendation);
+
 
 
 
@@ -98,8 +166,6 @@ const QueryDetailsPage = () => {
                             <h3 className="text-gray-800 text-3xl font-bold">{productBrand}</h3>
                         </div>
 
-
-
                         <div className="mt-8">
                             <ul className="flex border-b">
                                 <li
@@ -120,26 +186,61 @@ const QueryDetailsPage = () => {
                             </ul>
                         </div>
 
-
-
-                        <div className="flex items-center mt-8">
-                            <img src="https://readymadeui.com/team-2.webp" className="w-20 h-20 rounded-xl border-2 border-white" />
+                        <div className="flex items-center justify-end mt-8 mb-11">
+                            <img src={image ? image : user.photoURL} className="w-20 h-20 rounded-xl border-2 border-white" />
                             <div className="ml-3">
                                 <h4 className="text-xl font-bold">{name}</h4>
                                 <h4 className="text-sm font-semibold">{userEmail}</h4>
-                                <h4 className="text-sm font-semibold">{dateTime.slice(0, 15)}</h4>
+                                <h4 className="text-sm font-semibold"> <span className="text-teal-800 font-extrabold">Posted On: </span> {dateTime.slice(0, 15)}</h4>
                             </div>
                         </div>
 
+                        <form onSubmit={handleRecommendationData} className="bg-white shadow-md rounded px-8 py-6 mt-4">
+
+                            <h3 className="font-os text-lg font-bold">Recommended By</h3>
+
+                            {/* single comment */}
+
+                            {
+                                recommendation?.map(singleRecommendations =>
+                                    <div key={_id} className="flex my-4 items-center ">
+                                        <div className="w-14 h-14 rounded-xl bg-purple-400/50 flex-shrink-0 flex items-center justify-center">
+                                            <img className="h-20 w-20 rounded-xl object-cover" src={singleRecommendations.recommenderProfileImg} alt="" />
+                                        </div>
+
+                                        <div className="ml-3">
+                                            <div className="font-medium text-purple-800">{singleRecommendations.recommenderName}</div>
+                                            <div className="font-sm font-base">{singleRecommendations.recommenderEmail}</div>
+                                            <div className="text-gray-600">Posted on {singleRecommendations.currentTimeStamp}</div>
+                                            <div className="mt-2 text-purple-600">{singleRecommendations.recommendedReason}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                )
+                            }
 
 
 
-                        <form className="bg-white shadow-md rounded px-8 py-6 mt-4">
 
-                            <div className="flex items-center justify-center">
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div className="flex items-center justify-center mt-10">
                                 <a className="inline-block align-baseline font-bold text-sm text-teal-500 hover:text-teal-800" href="#">
-                                    Recommendation
+                                    {/* Add Recommendation */}
                                 </a>
                             </div>
 
@@ -157,20 +258,21 @@ const QueryDetailsPage = () => {
                                 <label className="block text-gray-700 text-sm font-bold mb-2">Product Image :</label>
                                 <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="recommendedProductImage" type="text" placeholder="Recommended product img link" />
                             </div>
-                            <div className="mb-4">
-                                <label className="block text-gray-700 text-sm font-bold mb-2">Reason :</label>
-                                <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="recommendedReason" type="text" placeholder="Recommended Reason" />
+
+
+                            <div className="md:flex lg:flex items-center justify-center">
+                                <div className="mb-4 md:w-3/5">
+                                    <label className="block text-gray-700 text-sm font-bold mb-2">Reason :</label>
+                                    <textarea rows="6" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="recommendedReason" type="text" placeholder="Recommended Reason"> </textarea>
+                                </div>
+
+                                <div className="flex items-center justify-center mt-8 md:w-2/5">
+                                    <button className="bg-teal-500 hover:bg-teal-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                                        Add Recommendation
+                                    </button>
+                                </div>
                             </div>
 
-
-
-
-                            <div className="flex items-center justify-center mt-8">
-                                <button className="bg-teal-500 hover:bg-teal-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                                    Add Recommendation
-                                </button>
-
-                            </div>
                         </form>
 
 
