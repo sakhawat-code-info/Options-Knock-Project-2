@@ -24,6 +24,30 @@ const QueryDetailsPage = () => {
     } = queryDetailsData;
 
 
+
+    const [recommendation, setRecommendation] = useState([]);
+
+    useEffect(() => {
+        dataFetch();
+    }, [])
+
+    console.log(recommendation);
+
+
+    const dataFetch = () => {
+        fetch(`http://localhost:5000/showRecommendation/${queryDetailsData._id}`)
+            .then(res => res.json())
+            .then(data => {
+                // const sortByDate = [].concat(data).sort((a, b) => b.dateTime - a.dateTime);
+                setRecommendation(data);
+            })
+    }
+
+
+
+
+
+
     const handleRecommendationData = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -68,11 +92,13 @@ const QueryDetailsPage = () => {
         })
             .then(res => res.json())
             .then(data => {
+
                 if (data.insertedId) {
+                    dataFetch();
                     Swal.fire({
                         // position: "top-end",
                         icon: "success",
-                        title: "RecommendationData Data Saved Successfully",
+                        title: "Recommendation Data Data Saved Successfully",
                         showConfirmButton: false,
                         timer: 1500
                     });
@@ -84,22 +110,11 @@ const QueryDetailsPage = () => {
 
 
 
-    const [recommendation, setRecommendation] = useState([]);
 
 
 
-    useEffect(() => {
-        fetch(`http://localhost:5000/showRecommendation/${queryDetailsData._id}`)
-            .then(res => res.json())
-            .then(data => {
-                const sortByDate = [].concat(data).sort((a, b) => b.dateTime - a.dateTime);
-                setRecommendation(sortByDate)
-            })
-    }, [])
 
 
-
-    console.log(recommendation);
 
 
 

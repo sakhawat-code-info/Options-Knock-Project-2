@@ -19,7 +19,6 @@ const MyRecommendationsPage = () => {
 
 
 
-
     const handleDeleteRecommendation = (id) => {
         // console.log('delete', id);
 
