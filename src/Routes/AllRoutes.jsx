@@ -40,7 +40,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/recommendationsForMe",
-                element: <RecommendationsForMePage />,
+                element: <PrivateRoute><RecommendationsForMePage /></PrivateRoute>,
             },
             {
                 path: "/myQueries",
