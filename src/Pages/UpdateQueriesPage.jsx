@@ -1,21 +1,32 @@
-import { Link, useLoaderData } from "react-router-dom";
-import UseAuth from "../hookPersonal/UseAuth";
+// import { useState } from "react";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
+// import UseAuth from "../hookPersonal/UseAuth";
+import Swal from "sweetalert2";
 
 const UpdateQueriesPage = () => {
+    const navigate = useNavigate();
 
-    const updateQueriesData = useLoaderData();
+    const data = useLoaderData();
+
+    // const [updateQueriesData, setUpdateQueriesData] = useState(data);
+
+
 
     const {
+        _id,
         productName,
         productBrand,
         productImageURL,
         queryTitle,
-        boycottingReasonDetails } = updateQueriesData;
+        boycottingReasonDetails,
+    } = data;
+
+    // console.log(updateQueriesData)
 
 
-    const { user } = UseAuth();
+    // const { user } = UseAuth();
     const currentDate = new Date(Date.now());
-    // const formattedDate = currentDate.toLocaleDateString('en-US');
+    const formattedDate = currentDate.toLocaleDateString('en-US');
     const handleUpdateQueries = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -25,13 +36,13 @@ const UpdateQueriesPage = () => {
         const productImageURL = form.productImageURL.value;
         const queryTitle = form.queryTitle.value;
         const boycottingReasonDetails = form.boycottingReasonDetails.value;
-        const userEmail = user.email;
-        const name = user.displayName;
-        const image = user.photoURL;
-        const dateTime = currentDate;
-        const recommendationCount = 0;
+        const userEmail = data.userEmail;
+        const name = data.name;
+        const image = data.image;
+        const dateTime = formattedDate;
+        const recommendationCount = data.recommendationCount;
 
-        console.log(
+        const updateQueries = {
             productName,
             productBrand,
             productImageURL,
@@ -42,7 +53,40 @@ const UpdateQueriesPage = () => {
             image,
             dateTime,
             recommendationCount
-        )
+        }
+
+        // console.log(updateQueries)
+
+        fetch(`http://localhost:5000/updateAddQueryData/${_id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updateQueries),
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.matchedCount) {
+                    Swal.fire({
+                        title: "Do you want to save the changes?",
+                        showDenyButton: true,
+                        showCancelButton: true,
+                        confirmButtonText: "Save",
+                        denyButtonText: `Don't save`
+                    }).then((result) => {
+                        /* Read more about isConfirmed, isDenied below */
+                        if (result.isConfirmed) {
+                            Swal.fire("Saved!", "", "success");
+                            navigate('/myQueries');
+                        } else if (result.isDenied) {
+                            Swal.fire("Changes are not saved", "", "info");
+                            navigate('/myQueries');
+                        }
+                    });
+                }
+
+            })
+
     }
 
 
@@ -68,10 +112,49 @@ const UpdateQueriesPage = () => {
 
                         <div className="grid grid-cols-6 gap-6">
 
+
                             <div className="col-span-6 sm:col-span-3">
                                 <label className="text-sm font-medium text-gray-900 block mb-2">Product Name</label>
-                                <input type="text" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Apple 27" name="productName" defaultValue={productName} required />
+                                <div className=" relative ">
+                                    <select className="block px-3 py-2 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm w-full focus:outline-none focus:ring-primary-500 focus:border-primary-500" defaultValue={productName} name="productName" required>
+                                        <option value="">
+                                            Select
+                                        </option>
+                                        <option value="Mobile">
+                                            Mobile
+                                        </option>
+                                        <option value="Laptop">
+                                            Laptop
+                                        </option>
+                                        <option value="Bike">
+                                            Bike
+                                        </option>
+                                        <option value="AC">
+                                            AC
+                                        </option>
+                                        <option value="Gun">
+                                            Gun
+                                        </option>
+                                    </select>
+                                </div>
+
+                                {/* <label className="text-sm font-medium text-gray-900 block mb-2">Product Name</label>
+                                <input type="text" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Apple 27" name="productName" required /> */}
                             </div>
+
+
+                            {/* <div className="col-span-6 sm:col-span-3">
+                                <label className="text-sm font-medium text-gray-900 block mb-2">Product Name</label>
+                                <input type="text" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Apple 27" name="productName" defaultValue={productName} required />
+                            </div> */}
+
+
+
+
+
+
+
+
                             <div className="col-span-6 sm:col-span-3">
                                 <label className="text-sm font-medium text-gray-900 block mb-2">Brand Name</label>
                                 <input type="text" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Apple" name="productBrand" defaultValue={productBrand} required />
@@ -98,11 +181,11 @@ const UpdateQueriesPage = () => {
                     <div className="p-6 border-t border-gray-200 rounded-b">
                         {/* <button className="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="submit">Save all</button> */}
 
-                        <Link to={'/myQueries'} className="flex rounded-full bg-gradient-to-tr from-[#660746] via-[#660746] to-[#660746] p-1 shadow-lg w-40">
+                        <a className="flex rounded-full bg-gradient-to-tr from-[#660746] via-[#660746] to-[#660746] p-1 shadow-lg w-40">
                             <button className="flex-1 font-bold text-base bg-white px-4 py-1 rounded-full" type="submit">
                                 Update Query
                             </button>
-                        </Link>
+                        </a>
 
                     </div>
 

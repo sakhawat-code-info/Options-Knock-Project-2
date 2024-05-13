@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import UseAuth from "../hookPersonal/UseAuth";
 import Swal from "sweetalert2";
 
 
 const AddQueriesPage = () => {
-
+    const navigate = useNavigate();
     const { user } = UseAuth();
 
     const currentDate = new Date(Date.now());
-    // const formattedDate = currentDate.toLocaleDateString('en-US');
+    const formattedDate = currentDate.toLocaleDateString('en-US');
 
 
     const handleAddQuery = (e) => {
@@ -23,7 +23,7 @@ const AddQueriesPage = () => {
         const userEmail = user.email;
         const name = user.displayName;
         const image = user.photoURL;
-        const dateTime = currentDate;
+        const dateTime = formattedDate;
         const recommendationCount = 0;
 
         const addQueries = {
@@ -38,7 +38,7 @@ const AddQueriesPage = () => {
             dateTime,
             recommendationCount
         }
-        console.log(dateTime);
+        // console.log(addQueries);
 
         fetch('http://localhost:5000/addQueryData', {
             method: "POST",
@@ -57,6 +57,7 @@ const AddQueriesPage = () => {
                         showConfirmButton: false,
                         timer: 1500
                     });
+                    navigate('/myQueries');
                 }
                 form.reset();
             })
@@ -88,8 +89,34 @@ const AddQueriesPage = () => {
 
                             <div className="col-span-6 sm:col-span-3">
                                 <label className="text-sm font-medium text-gray-900 block mb-2">Product Name</label>
-                                <input type="text" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Apple 27" name="productName" required />
+                                <div className=" relative ">
+                                    <select className="block px-3 py-2 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm w-full focus:outline-none focus:ring-primary-500 focus:border-primary-500" name="productName" required>
+                                        <option value="">
+                                            Select
+                                        </option>
+                                        <option value="Mobile">
+                                            Mobile
+                                        </option>
+                                        <option value="Laptop">
+                                            Laptop
+                                        </option>
+                                        <option value="Bike">
+                                            Bike
+                                        </option>
+                                        <option value="AC">
+                                            AC
+                                        </option>
+                                        <option value="Gun">
+                                            Gun
+                                        </option>
+                                    </select>
+                                </div>
+
+                                {/* <label className="text-sm font-medium text-gray-900 block mb-2">Product Name</label>
+                                <input type="text" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Apple 27" name="productName" required /> */}
                             </div>
+
+
                             <div className="col-span-6 sm:col-span-3">
                                 <label className="text-sm font-medium text-gray-900 block mb-2">Brand Name</label>
                                 <input type="text" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Apple" name="productBrand" required />

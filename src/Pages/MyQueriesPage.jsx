@@ -21,7 +21,7 @@ const MyQueriesPage = () => {
                 const sortByDate = [].concat(data).sort((a, b) => b.dateTime - a.dateTime);
                 setMyQueriesData(sortByDate)
             })
-    }, [myQueriesData])
+    }, [])
 
     // console.log(myQueriesData);
 
@@ -113,8 +113,8 @@ const MyQueriesPage = () => {
                                         <a href="#"></a>
                                         <div className="relative">
                                             <a href="#">
-                                                <img className="w-full"
-                                                    src="https://images.pexels.com/photos/196667/pexels-photo-196667.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                                                <img className="w-full h-48"
+                                                    src={singleData.productImageURL}
                                                     alt="Sunset in the mountains" />
                                                 <div
                                                     className="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
@@ -129,8 +129,8 @@ const MyQueriesPage = () => {
                                             <a href="!#">
                                                 <div
                                                     className="text-sm absolute top-0 right-0 bg-indigo-600 px-4 text-white rounded-full h-16 w-16 flex flex-col items-center justify-center mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
-                                                    <span className="font-bold">{singleData.dateTime.slice(4, 7)}</span>
-                                                    <small>{singleData.dateTime.slice(8, 10)}</small>
+                                                    <span className="font-bold">{singleData.dateTime.slice(0, 1)}</span>
+                                                    <small>{singleData.dateTime.slice(2, 7)}</small>
                                                 </div>
                                             </a>
                                         </div>

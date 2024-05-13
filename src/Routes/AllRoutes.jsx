@@ -22,11 +22,12 @@ export const router = createBrowserRouter([
             {
                 path: "/",
                 element: <App />,
+                loader: () => fetch('http://localhost:5000/allQueryData')
             },
             {
                 path: "/queries",
                 element: <QueriesPage />,
-                loader: () => fetch('http://localhost:5000/allQueryData')
+                loader: () => fetch('http://localhost:5000/allQueryData', { credentials: "include" })
             },
             {
                 path: "/queryDetails/:detailsId",
