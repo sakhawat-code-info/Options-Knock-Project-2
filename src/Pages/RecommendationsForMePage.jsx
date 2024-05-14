@@ -11,14 +11,14 @@ const RecommendationsForMePage = () => {
 
     useEffect(() => {
 
-        fetch(`https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/recommendationForMeWithoutLoginUser/${user.email}`)
+        fetch(`https://b9a11-server-side-sakhawat-code-info.vercel.app/recommendationForMeWithoutLoginUser/${user.email}`)
             .then(res => res.json())
             .then(data => setRecommendationForMe(data))
 
     }, [user.email])
 
 
-    console.log(recommendationForMe)
+    // console.log(recommendationForMe)
 
 
 

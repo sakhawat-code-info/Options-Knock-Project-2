@@ -32,7 +32,7 @@ const QueriesPage = () => {
 
     const searchDataFetch = () => {
 
-        fetch(`https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/allQueryDataBy?productName=${searchBy}`)
+        fetch(`https://b9a11-server-side-sakhawat-code-info.vercel.app/allQueryDataBy?productName=${searchBy}`)
             .then(res => res.json())
             .then(data => setAllQueries(data))
     }

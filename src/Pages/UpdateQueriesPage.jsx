@@ -57,7 +57,7 @@ const UpdateQueriesPage = () => {
 
         // console.log(updateQueries)
 
-        fetch(`https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/updateAddQueryData/${_id}`, {
+        fetch(`https://b9a11-server-side-sakhawat-code-info.vercel.app/updateAddQueryData/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

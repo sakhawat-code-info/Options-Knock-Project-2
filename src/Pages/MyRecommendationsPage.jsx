@@ -11,7 +11,7 @@ const MyRecommendationsPage = () => {
 
     useEffect(() => {
 
-        fetch(`https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/showRecommendationThatDoneByMe/${user.email}`)
+        fetch(`https://b9a11-server-side-sakhawat-code-info.vercel.app/showRecommendationThatDoneByMe/${user.email}`)
             .then(res => res.json())
             .then(data => setRecommendationThatDoneByMe(data))
     }, [])
@@ -33,7 +33,7 @@ const MyRecommendationsPage = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/recommendationDelete?deleteRecomId=${id}&countLess=${queryId}`, {
+                fetch(`https://b9a11-server-side-sakhawat-code-info.vercel.app/recommendationDelete?deleteRecomId=${id}&countLess=${queryId}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
