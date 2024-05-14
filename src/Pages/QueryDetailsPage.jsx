@@ -35,7 +35,7 @@ const QueryDetailsPage = () => {
 
 
     const dataFetch = () => {
-        fetch(`http://localhost:5000/showRecommendation/${queryDetailsData._id}`)
+        fetch(`https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/showRecommendation/${queryDetailsData._id}`)
             .then(res => res.json())
             .then(data => {
                 // const sortByDate = [].concat(data).sort((a, b) => b.dateTime - a.dateTime);
@@ -81,7 +81,7 @@ const QueryDetailsPage = () => {
         }
         // console.log(recommendationData);
 
-        fetch('http://localhost:5000/recommendation', {
+        fetch('https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/recommendation', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

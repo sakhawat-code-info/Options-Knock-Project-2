@@ -12,10 +12,12 @@ const QueriesPage = () => {
 
     // for search field 
     const [searchBy, setSearchBy] = useState('');
+
     const handleSearchField = (e) => {
         e.preventDefault();
         const form = e.target;
         const searchData = form.searchData.value;
+
         setSearchBy(searchData)
 
     }
@@ -23,12 +25,21 @@ const QueriesPage = () => {
 
     // for search data 
     useEffect(() => {
+        searchDataFetch();
 
-        fetch(`http://localhost:5000/allQueryDataBy/${searchBy}`)
+    }, [searchBy])
+
+
+    const searchDataFetch = () => {
+
+        fetch(`https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/allQueryDataBy?productName=${searchBy}`)
             .then(res => res.json())
             .then(data => setAllQueries(data))
+    }
 
-    }, [])
+
+
+
 
 
 

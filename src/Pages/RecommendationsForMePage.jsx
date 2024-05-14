@@ -11,7 +11,7 @@ const RecommendationsForMePage = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/recommendationForMeWithoutLoginUser/${user.email}`)
+        fetch(`https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/recommendationForMeWithoutLoginUser/${user.email}`)
             .then(res => res.json())
             .then(data => setRecommendationForMe(data))
 

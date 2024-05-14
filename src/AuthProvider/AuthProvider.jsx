@@ -42,13 +42,13 @@ const AuthProvider = ({ children }) => {
                 setUser(currentUser);
                 setLoader(false);
 
-                axios.post('http://localhost:5000/jwt', emailData, { withCredentials: true })
+                axios.post('https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/jwt', emailData, { withCredentials: true })
                     .then(res => console.log("token received", res.data))
 
 
             } else {
 
-                axios.post('http://localhost:5000/jwtLogout', emailData, { withCredentials: true })
+                axios.post('https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/jwtLogout', emailData, { withCredentials: true })
                     .then(res => console.log("token clear", res.data))
 
                 setUser("");

@@ -22,22 +22,22 @@ export const router = createBrowserRouter([
             {
                 path: "/",
                 element: <App />,
-                loader: () => fetch('http://localhost:5000/allQueryData')
+                loader: () => fetch('https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/allQueryData')
             },
             {
                 path: "/queries",
                 element: <QueriesPage />,
-                loader: () => fetch('http://localhost:5000/allQueryData', { credentials: "include" })
+                loader: () => fetch('https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/allQueryData', { credentials: "include" })
             },
             {
                 path: "/queryDetails/:detailsId",
                 element: <PrivateRoute><QueryDetailsPage /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/queryDetails/${params.detailsId}`)
+                loader: ({ params }) => fetch(`https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/queryDetails/${params.detailsId}`)
             },
             {
                 path: "/updateQueriesPage/:detailsId",
                 element: <PrivateRoute><UpdateQueriesPage /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/queryDetails/${params.detailsId}`)
+                loader: ({ params }) => fetch(`https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/queryDetails/${params.detailsId}`)
             },
             {
                 path: "/recommendationsForMe",

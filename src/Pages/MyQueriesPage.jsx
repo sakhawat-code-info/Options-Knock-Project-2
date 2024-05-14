@@ -15,7 +15,7 @@ const MyQueriesPage = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myQueries/${user.email}`)
+        fetch(`https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/myQueries/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 const sortByDate = [].concat(data).sort((a, b) => b.dateTime - a.dateTime);
@@ -40,7 +40,7 @@ const MyQueriesPage = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/queryDelete/${id}`, {
+                fetch(`https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/queryDelete/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

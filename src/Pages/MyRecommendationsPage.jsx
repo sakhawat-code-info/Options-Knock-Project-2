@@ -11,7 +11,7 @@ const MyRecommendationsPage = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/showRecommendationThatDoneByMe/${user.email}`)
+        fetch(`https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/showRecommendationThatDoneByMe/${user.email}`)
             .then(res => res.json())
             .then(data => setRecommendationThatDoneByMe(data))
     }, [])
@@ -19,7 +19,7 @@ const MyRecommendationsPage = () => {
 
 
 
-    const handleDeleteRecommendation = (id) => {
+    const handleDeleteRecommendation = (id, queryId) => {
         // console.log('delete', id);
 
         Swal.fire({
@@ -33,7 +33,7 @@ const MyRecommendationsPage = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/recommendationDelete/${id}`, {
+                fetch(`https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/recommendationDelete?deleteRecomId=${id}&countLess=${queryId}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -107,7 +107,7 @@ const MyRecommendationsPage = () => {
                                 </td>
 
                                 <td className="px-6 py-3 text-sm">
-                                    <button onClick={() => handleDeleteRecommendation(singleItem._id)} className="flex items-center p-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
+                                    <button onClick={() => handleDeleteRecommendation(singleItem._id, singleItem.queryId)} className="flex items-center p-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
                                         <MdOutlineDeleteForever size={20} />
                                     </button>
                                 </td>

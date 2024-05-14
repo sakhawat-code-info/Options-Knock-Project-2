@@ -40,7 +40,7 @@ const AddQueriesPage = () => {
         }
         // console.log(addQueries);
 
-        fetch('http://localhost:5000/addQueryData', {
+        fetch('https://b9a11-server-side-sakhawat-code-info-qdjgwo3b0.vercel.app/addQueryData', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
