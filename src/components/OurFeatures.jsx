@@ -2,7 +2,7 @@
 const OurFeatures = () => {
     return (
         <div>
-            <div className="max-w-5xl mx-auto text-[#333] font-[sans-serif] my-14">
+            <div className="max-w-5xl mx-auto text-[#333] font-[sans-serif] p-4 mt-10 md:my-14 ">
                 <div className="text-center max-w-2xl mx-auto">
                     <h2 className="text-xl font-extrabold text-center mb-4">Our Exclusive Features</h2>
                     <p className="text-sm">Unlock a world of possibilities with our exclusive features. Explore how our unique offerings can transform your journey and empower you to achieve more.</p>

@@ -20,9 +20,7 @@ const Footer = () => {
                                 Quick&nbsp;<span className="text-rose-600">Think</span>
                             </h1>
                         </p>
-                        <p className="mt-[18px] text-[15px] font-normal text-white/[80%]">Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Eos, fugit non. Incidunt dolorum adipisci, tempore asperiores nemo odio facere officiis enim animi
-                            placeat eaque nesciunt alias beatae id, at dicta.</p>
+                        <p className="mt-[18px] text-[15px] font-normal text-white/[80%] text-justify">Welcome to Quick Thing, your ultimate destination for swift solutions and efficient outcomes. At Quick Thing, we understand the value of time and the importance of getting things done quickly. Whether you are looking to streamline your workflow, solve complex problems, or find rapid solutions to everyday challenges, Quick Thing is here to help.</p>
                         <div className="mt-[18px] flex gap-4">
 
                             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">

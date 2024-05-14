@@ -9,8 +9,7 @@ const OurTrastedusers = () => {
                         <div className="text-center">
                             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Empowering Businesses Globally</h2>
                             <p className="mt-4 text-lg leading-8 text-gray-600">
-                                Our platform is trusted by organizations worldwide to boost productivity, streamline operations, and enhance
-                                customer experiences.
+                                It is a mission that goes beyond geographical boundaries. In today is interconnected world, businesses face opportunities and challenges on a global scale. From startups to multinational corporations, the need to expand and thrive in diverse markets has never been more crucial.
                             </p>
                         </div>
                         <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
