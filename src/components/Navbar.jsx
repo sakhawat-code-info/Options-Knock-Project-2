@@ -4,7 +4,7 @@ import { GiChoice } from "react-icons/gi";
 import { PiGlobeStandLight } from "react-icons/pi";
 
 import { Link, NavLink } from "react-router-dom";
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.svg';
 import UseAuth from "../hookPersonal/UseAuth";
 import { useEffect, useState } from "react";
 
@@ -44,7 +44,7 @@ const Navbar = () => {
                 // Sign-out successful.
             }).catch((error) => {
                 // An error happened.
-                // console.log(error);
+                console.log(error);
             });
     }
 
