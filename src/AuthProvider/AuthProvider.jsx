@@ -43,7 +43,7 @@ const AuthProvider = ({ children }) => {
                 setLoader(false);
 
                 axios.post('https://b9a11-server-side-sakhawat-code-info.vercel.app/jwt', emailData, { withCredentials: true })
-                    .then(res => console.log("token received", res.data))
+                    .then(res => res.data)
 
 
             } else {

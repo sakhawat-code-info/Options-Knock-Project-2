@@ -1,4 +1,6 @@
-import { IoShareSocialOutline } from "react-icons/io5";
+// import { IoShareSocialOutline } from "react-icons/io5";
+import { FcViewDetails } from "react-icons/fc";
+import { MdPublishedWithChanges } from "react-icons/md";
 import { Link, useLoaderData } from "react-router-dom";
 import { LuLayoutPanelLeft } from "react-icons/lu";
 import { useEffect, useState } from "react";
@@ -7,6 +9,7 @@ const QueriesPage = () => {
 
     const allQueryData = useLoaderData();
     // console.log(allQueryData);
+
 
     const [allQueries, setAllQueries] = useState(allQueryData);
 
@@ -92,10 +95,10 @@ const QueriesPage = () => {
                         allQueries?.map(singleDate =>
                             <div key={singleDate._id}
                                 className="flex flex-col sm:flex-row sm:max-w-2xl max-w-xs mx-auto overflow-hidden bg-gray-700 shadow-lg dark:bg-gray-800  rounded-xl">
-                                <div className="p-2 w-1/2 flex-1">
+                                <div className="p-2 md:w-1/2 flex-1">
                                     <img className="rounded object-cover w-full sm:h-80 h-60" src={singleDate.productImageURL} alt="Article" />
                                 </div>
-                                <div className="sm:p-4 px-2 w-1/2 flex flex-col justify-between flex-1">
+                                <div className="sm:p-4 px-2 md:w-1/2 flex flex-col justify-between flex-1">
                                     <div>
                                         <div className="flex justify-between">
                                             <span href="#"
@@ -116,19 +119,24 @@ const QueriesPage = () => {
                                         </p>
                                     </div>
 
-                                    <div className="mt-4">
+                                    <div className="my-4">
                                         <div className="flex items-center justify-center">
-                                            <div className="flex items-center flex-1">
+                                            <div className="flex items-center flex-1 py-2 md:py-0 lg:py-0">
                                                 <img className="object-cover h-10 w-10 rounded-xl" src={singleDate.image} alt="Avatar" />
                                                 <div className="flex flex-col mx-2">
                                                     <a href="#" className=" font-semibold text-gray-50 dark:text-gray-200">{singleDate.name}</a>
                                                     <span className=" text-xs text-gray-400 dark:text-gray-300">{singleDate.dateTime.slice(0, 17)}</span>
                                                 </div>
                                             </div>
-                                            <p className="text-white mr-2"> {singleDate.recommendationCount} </p>
+                                            <div className="text-white flex items-center justify-center gap-1">
+                                                <MdPublishedWithChanges />
+                                                <p className="text-white mr-2 text-xl font-extralight">{singleDate.recommendationCount} </p>
+                                            </div>
 
                                             <Link to={`/queryDetails/${singleDate._id}`} className="text-white">
-                                                <IoShareSocialOutline size={20} />
+                                                {/* <IoShareSocialOutline size={20} /> */}
+                                                <FcViewDetails size={20} />
+
                                             </Link>
 
                                         </div>

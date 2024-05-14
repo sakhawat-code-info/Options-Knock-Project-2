@@ -8,11 +8,7 @@ const Footer = () => {
         <div className="mt-8 bg-[#660746] pt-9 text-black">
             <div className="mx-auto w-full max-w-[1166px] px-4 xl:px-0">
 
-
-
-
-
-                <div className="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10">
+                <div className="flex flex-col justify-center  lg:justify-between sm:px-[18px] md:flex-row md:px-10">
                     <div className="md:w-[316px]">
                         <p className="text-[18px] font-medium text-white">
                             <h1 className="text-white font-extrabold flex items-center">
@@ -38,10 +34,6 @@ const Footer = () => {
                             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
                                 <img src="https://img.icons8.com/fluent/30/000000/twitter.png" />
                             </a>
-
-
-
-
 
                         </div>
                     </div>

@@ -205,32 +205,23 @@ const QueryDetailsPage = () => {
 
                             {/* single comment */}
 
-                            {
+                            {/* {
                                 recommendation?.map(singleRecommendations =>
                                     <div key={_id} className="p-4">
-                                        <figure className="md:flex max-w-5xl bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
+                                        <figure className="md:flex max-w-5xl  rounded-xl p-8 md:p-0 dark:bg-slate-800">
                                             <img className="w-24 h-24 md:w-40 md:h-auto md:rounded-none rounded-full mx-auto object-cover" src={singleRecommendations.recommendedProductImage} alt="Alternative product photo" />
 
                                             <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
                                                 <blockquote className="my-1">
 
-                                                    {/* 
-                                                    <p className="text-lg font-medium dark:text-slate-100">
-                                                        <span className="text-red-500">Title : </span> {singleRecommendations.recommendationTitle}
-                                                    </p>
-                                                    <p className="text-lg font-medium dark:text-slate-100">
-                                                        <span className="text-red-500">Product Name : </span> {singleRecommendations.recommendedProductName}
-                                                    </p>
-                                                    <p className="text-lg font-medium dark:text-slate-100">
-                                                        <span className="text-red-500">Alternation Reason : </span> {singleRecommendations.recommendedReason}
-                                                    </p> */}
+                                                    
 
 
                                                     <div className="flex flex-col">
                                                         <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                                                             <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                                                                 <div className="overflow-hidden">
-                                                                    <table className="min-w-full">
+                                                                    <table className="min-w-full ">
                                                                         <tbody>
                                                                             <tr className="border-b">
                                                                                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Title : </td>
@@ -242,7 +233,7 @@ const QueryDetailsPage = () => {
                                                                             </tr>
                                                                             <tr className="border-b">
                                                                                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Alternation Reason : </td>
-                                                                                <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{singleRecommendations.recommendedReason}</td>
+                                                                                <td className="text-sm text-gray-900 font-light px-6 py-4 text-justify">{singleRecommendations.recommendedReason.slice(0, 70)}</td>
                                                                             </tr>
 
                                                                         </tbody>
@@ -255,7 +246,7 @@ const QueryDetailsPage = () => {
 
                                                 </blockquote>
                                                 <figcaption className="font-medium">
-                                                    <div className="flex flex-wrap items-center justify-center">
+                                                    <div className="flex flex-wrap items-center">
                                                         <img src={singleRecommendations.recommenderProfileImg} className="w-9 h-9 rounded-full" />
                                                         <div className="ml-4 text-left">
                                                             <p className="text-sm font-semibold">{singleRecommendations.recommenderName}</p>
@@ -270,8 +261,100 @@ const QueryDetailsPage = () => {
                                         </figure>
                                     </div>
 
+
+
+
+
+                                )
+                            } */}
+
+
+
+                            {/* update one  */}
+                            {
+                                recommendation?.map(singleRecommendations =>
+
+                                    <div key={singleRecommendations._id} className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
+                                        <div className="flex flex-col md:flex-row lg:flex-row  md:justify-between p-4">
+                                            <div className="flex md:space-x-4">
+                                                <div>
+                                                    <img src={singleRecommendations.recommenderProfileImg} alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+                                                </div>
+                                                <div>
+
+                                                    <h4 className="font-bold">{singleRecommendations.recommenderName}</h4>
+                                                    <span className="text-xs dark:text-gray-600">{singleRecommendations.recommenderEmail}</span>
+
+                                                </div>
+                                            </div>
+
+                                            <div className="flex items-center space-x-2 dark:text-yellow-700">
+                                                {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-5 h-5 fill-current">
+                                                    <path d="M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Zm-32.53,18.7L367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z"></path>
+                                                </svg> */}
+                                                <span className=" font-bold">{singleRecommendations.currentTimeStamp}</span>
+                                            </div>
+                                        </div>
+                                        <div className=" space-y-2 text-sm dark:text-gray-600 flex flex-col md:flex-row lg:flex-row gap-3">
+
+                                            <div className="md:w-2/5 rounded-lg p-4">
+                                                <img className="h=[185px] rounded-lg" src={singleRecommendations.recommendedProductImage} alt="Alternative product photo" />
+                                            </div>
+
+                                            <div className="md:w-3/5">
+                                                <p><span className=" font-extrabold">Title : </span> {singleRecommendations.recommendationTitle}</p>
+                                                <p><span className=" font-extrabold">Product Name : </span> {singleRecommendations.recommendedProductName}</p>
+                                                <p><span className=" font-extrabold">Alternation Reason : </span> {singleRecommendations.recommendedReason.slice(0, 200)} . . .</p>
+
+
+                                                {/* <p className="text-xs text-right dark:text-gray-600 mt-5">{singleRecommendations.currentTimeStamp}</p> */}
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+
                                 )
                             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

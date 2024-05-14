@@ -84,7 +84,7 @@ const MyQueriesPage = () => {
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" className="h-6 w-6 text-white"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
                                 </span>
                                 <p className="ml-3 truncate font-medium text-white">
-                                    <span className="">Hope we can received a good query. right now !</span>
+                                    <span className="capitalize">Please show us a good Product. Right now ?</span>
                                 </p>
                             </div>
                             <div className="order-3 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
@@ -129,8 +129,8 @@ const MyQueriesPage = () => {
                                             <a href="!#">
                                                 <div
                                                     className="text-sm absolute top-0 right-0 bg-indigo-600 px-4 text-white rounded-full h-16 w-16 flex flex-col items-center justify-center mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
-                                                    <span className="font-bold">{singleData.dateTime.slice(0, 1)}</span>
-                                                    <small>{singleData.dateTime.slice(2, 7)}</small>
+                                                    <span className="font-bold text-2xl">{singleData.dateTime.slice(0, 1)}</span>
+                                                    <small>{singleData.dateTime.slice(2, 10)}</small>
                                                 </div>
                                             </a>
                                         </div>
