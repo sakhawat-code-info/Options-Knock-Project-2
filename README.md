@@ -9,12 +9,12 @@ Currently, two official plugins are available:
 
 
 
-for submission 
+<!-- for submission  -->
 
 - Assignment ID/Variant: assignment_category_0009
-- Client-side code GitHub repository : 
-- Server-side code GitHub repository : 
-- Live website URL link : 
+- Client-side code GitHub repository : https://github.com/Porgramming-Hero-web-course/b9a11-client-side-sakhawat-code-info
+- Server-side code GitHub repository : https://github.com/Porgramming-Hero-web-course/b9a11-server-side-sakhawat-code-info
+- Live website URL link : https://b9a11-client-side.web.app
 
 
 
@@ -26,18 +26,25 @@ for submission
     -> Add data page
     -> update and delete page
     -> User Profile
-    -> Contract us page
     -> Sign In, Login page, 
     -> Google login system
+    -> Footer 
 
 
 - Characteristics : 
-    -> User-friendly Interface
-    -> Comprehensive Database
-    -> Advanced Functionality
-    -> Detailed Pages
-    -> Privacy and protected information
+    -> Comprehensive database of alternative products.
+    -> Search functionality by category, brand, price range, and features.
+    -> Product comparison feature.
+    -> User reviews and ratings.
+    -> Recommendation engine.
+    -> Detailed product information.
+    -> Price tracking.
+    -> Real-time availability status.
+    -> User accounts for saving favorites and managing reviews.
+    -> Responsive design.
+    -> Educational resources.
+    -> Integration with e-commerce platforms.
+    -> Data privacy and security.
+    -> Feedback mechanism.
+    -> Social sharing capabilities.
 
-- npm packages used: 
-    -> Lottie React
-    -> React-simple-typewriter

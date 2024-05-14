@@ -11,13 +11,13 @@ const MyRecommendationsPage = () => {
 
     useEffect(() => {
 
-        fetch(`https://b9a11-server-side-sakhawat-code-info.vercel.app/showRecommendationThatDoneByMe/${user.email}`)
+        fetch(`https://b9a11-server-side-sakhawat-code-info.vercel.app/showRecommendationThatDoneByMe/${user.email}`, { credentials: "include" })
             .then(res => res.json())
             .then(data => setRecommendationThatDoneByMe(data))
     }, [])
 
 
-
+    // https://b9a11-server-side-sakhawat-code-info.vercel.app
 
     const handleDeleteRecommendation = (id, queryId) => {
         // console.log('delete', id);
@@ -111,7 +111,7 @@ const MyRecommendationsPage = () => {
                                         </div>
                                     </td>
                                     <td className="px-6 py-3 text-sm">
-                                        {singleItem.recommendedReason.slice(0, 120)}
+                                        {singleItem.recommendedReason.slice(0, 90)}
                                         <p className="text-xs text-gray-400 mt-1"></p>
                                     </td>
 

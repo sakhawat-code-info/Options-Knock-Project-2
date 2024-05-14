@@ -40,12 +40,6 @@ const QueriesPage = () => {
             .then(data => setAllQueries(data))
     }
 
-
-
-
-
-
-
     // for layout change
     const [layout, setLayout] = useState(2)
     // layout 
@@ -56,10 +50,6 @@ const QueriesPage = () => {
             setLayout(2)
         }
     }
-
-
-
-
 
 
     return (
