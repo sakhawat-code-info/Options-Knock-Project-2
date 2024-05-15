@@ -43,11 +43,6 @@ const QueriesPage = () => {
     }
 
 
-
-
-
-
-
     return (
         <div>
             <div className="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
@@ -74,17 +69,17 @@ const QueriesPage = () => {
                 </div>
 
 
-                <div className={`grid grid-cols-1 md:grid-cols-${layout} sm:grid-cols-${layout} gap-10`}>
+                <div className={`grid grid-cols-1 md:grid-cols-${layout} sm:grid-cols-${layout} gap-6`}>
 
                     {/* single content  */}
                     {
                         allQueries?.map(singleDate =>
                             <div key={singleDate._id}
-                                className="flex flex-col sm:flex-row sm:max-w-2xl max-w-xs mx-auto overflow-hidden bg-gray-700 shadow-lg dark:bg-gray-800  rounded-xl">
-                                <div className="p-2 md:w-1/2 flex-1">
-                                    <img className="rounded object-cover w-full sm:h-80 h-60" src={singleDate.productImageURL} alt="Article" />
+                                className="flex flex-wrap md:flex-nowrap shadow-lg mx-auto bg-[#382335] max-w-3xl group cursor-pointer transform duration-500 hover:-translate-y-1">
+                                <div className="p-2 w-full flex-1">
+                                    <img className="w-full h-full object-cover" src={singleDate.productImageURL} alt="Article" />
                                 </div>
-                                <div className="sm:p-4 px-2 md:w-1/2 flex flex-col justify-between flex-1">
+                                <div className="sm:p-4 px-2  flex flex-col justify-between flex-1">
                                     <div>
                                         <div className="flex justify-between">
                                             <span href="#"
@@ -101,7 +96,7 @@ const QueriesPage = () => {
 
 
                                         <p className="mt-2 text-sm text-gray-200 dark:text-gray-400">
-                                            <span className="text-red-500 font-extrabold">Alternation Reason : </span> {singleDate.boycottingReasonDetails}
+                                            <span className="text-[#82afb5] font-extrabold text-justify">Alternation Reason : </span> {singleDate.boycottingReasonDetails}
                                         </p>
                                     </div>
 

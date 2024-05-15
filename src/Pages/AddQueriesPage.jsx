@@ -70,7 +70,7 @@ const AddQueriesPage = () => {
 
     return (
         <div>
-            <div className="bg-white border-4 rounded-lg shadow relative m-10">
+            <div className=" border-4 rounded-lg shadow relative m-10">
                 <form onSubmit={handleAddQuery}>
                     <div className="flex items-start justify-between p-5 border-b rounded-t">
                         <h3 className="text-xl font-semibold">

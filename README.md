@@ -64,7 +64,10 @@ Currently, two official plugins are available:
       }}
     > -->
 
-
+   // bg-[#382335]  bg
+   
+   
+   bg-[#82afb5]
 
 
 

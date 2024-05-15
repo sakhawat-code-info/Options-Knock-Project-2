@@ -5,7 +5,7 @@ import logo from '../assets/logo.svg';
 
 const Footer = () => {
     return (
-        <div className="mt-8 bg-[#660746] pt-9 text-black">
+        <div className="mt-8 bg-[#382335] pt-9 text-black">
             <div className="mx-auto w-full max-w-[1166px] px-4 xl:px-0">
 
                 <div className="flex flex-col justify-center  lg:justify-between sm:px-[18px] md:flex-row md:px-10">

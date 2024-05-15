@@ -2,7 +2,7 @@
 const OurFeatures = () => {
     return (
         <div>
-            <div className="max-w-5xl mx-auto text-[#333] font-[sans-serif] p-4 mt-10 md:my-14 ">
+            <div className="max-w-5xl mx-auto text-[#333] font-[sans-serif] p-4 mt-10 md:my-14">
                 <div className="text-center max-w-2xl mx-auto">
                     <h2 className="text-xl font-extrabold text-center mb-4">Our Exclusive Features</h2>
                     <p className="text-sm">Unlock a world of possibilities with our exclusive features. Explore how our unique offerings can transform your journey and empower you to achieve more.</p>
@@ -10,7 +10,7 @@ const OurFeatures = () => {
                 <div className="mt-16">
                     <div className="grid md:grid-cols-2 items-center gap-16">
                         <div>
-                            <img src="https://readymadeui.com/image-1.webp" className="w-full object-contain rounded-md shadow-[0_14px_40px_-11px_rgba(93,96,127,0.2)]" />
+                            <img src="https://readymadeui.com/image-1.webp" className="w-full object-contain rounded-md shadow-2xl" />
                         </div>
                         <div>
                             <h3 className="text-2xl font-extrabold mb-4">Customization</h3>
@@ -29,7 +29,7 @@ const OurFeatures = () => {
                             </button>
                         </div>
                         <div>
-                            <img src="https://readymadeui.com/contact.webp" className="w-full object-contain rounded-md shadow-[0_14px_40px_-11px_rgba(93,96,127,0.2)]" />
+                            <img src="https://readymadeui.com/contact.webp" className="w-full object-contain rounded-md shadow-2xl" />
                         </div>
                     </div>
                 </div>

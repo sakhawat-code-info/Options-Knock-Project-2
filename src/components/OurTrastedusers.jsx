@@ -3,12 +3,12 @@
 const OurTrastedusers = () => {
     return (
         <div>
-            <div className="bg-white py-16 sm:py-20">
+            <div className=" py-16 sm:py-20">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto max-w-2xl lg:max-w-none">
                         <div className="text-center">
                             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Empowering Businesses Globally</h2>
-                            <p className="mt-4 text-lg leading-8 text-gray-600">
+                            <p className="mt-4 text-lg leading-8 text-gray-900">
                                 It is a mission that goes beyond geographical boundaries. In today is interconnected world, businesses face opportunities and challenges on a global scale. From startups to multinational corporations, the need to expand and thrive in diverse markets has never been more crucial.
                             </p>
                         </div>

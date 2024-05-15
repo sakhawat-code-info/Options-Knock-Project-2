@@ -29,13 +29,6 @@ const Navbar = () => {
 
 
 
-
-
-
-
-
-
-
     const { user, loggingOut } = UseAuth();
 
     const handleLoggingOut = () => {
@@ -52,7 +45,7 @@ const Navbar = () => {
     const navLink = (
         <>
             <li>
-                <NavLink to="/" className={({ isActive }) => (isActive ? "border-2 border-[#660746] text-[#660746] font-extrabold" : "relative border-2 border-[#F9E2E3]  rounded px-4 py-2 inline cursor-pointer font-extrabold text-[#660746] before:bg-[#660746] hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[3px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100 ")}>
+                <NavLink to="/" className={({ isActive }) => (isActive ? "bg-[#382335] text-white font-extrabold" : "relative  rounded px-4 py-2 inline cursor-pointer font-extrabold text-black before:bg-[#382335] hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[3px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100 ")}>
                     <div className="flex items-center justify-center gap-2">
                         <IoHomeOutline size={18} />
                         <span>Home</span>
@@ -60,7 +53,7 @@ const Navbar = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/queries" className={({ isActive }) => (isActive ? "border-2 border-[#660746] text-[#660746] font-extrabold" : "relative border-2 border-[#F9E2E3]  rounded px-4 py-2 inline cursor-pointer font-extrabold text-[#660746] before:bg-[#660746] hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[3px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100 ")}>
+                <NavLink to="/queries" className={({ isActive }) => (isActive ? "bg-[#382335] text-white font-extrabold" : "relative  rounded px-4 py-2 inline cursor-pointer font-extrabold text-black before:bg-[#382335] hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[3px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100 ")}>
                     <div className="flex items-center justify-center gap-2">
                         <MdCompare size={18} />
                         <span>Queries</span>
@@ -71,7 +64,7 @@ const Navbar = () => {
             {
                 user && <>
                     <li>
-                        <NavLink to="/recommendationsForMe" className={({ isActive }) => (isActive ? "border-2 border-[#660746] text-[#660746] font-extrabold" : "relative border-2 border-[#F9E2E3]  rounded px-4 py-2 inline cursor-pointer font-extrabold text-[#660746] before:bg-[#660746] hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[3px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100 ")}>
+                        <NavLink to="/recommendationsForMe" className={({ isActive }) => (isActive ? "bg-[#382335] text-white font-extrabold" : "relative  rounded px-4 py-2 inline cursor-pointer font-extrabold text-black before:bg-[#382335] hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[3px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100 ")}>
                             <div className="flex items-center justify-center gap-2">
                                 <GiChoice size={18} />
                                 <span>Recommendations For Me</span>
@@ -79,7 +72,7 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/myQueries" className={({ isActive }) => (isActive ? "border-2 border-[#660746] text-[#660746] font-extrabold" : "relative border-2 border-[#F9E2E3]  rounded px-4 py-2 inline cursor-pointer font-extrabold text-[#660746] before:bg-[#660746] hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[3px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100 ")}>
+                        <NavLink to="/myQueries" className={({ isActive }) => (isActive ? "bg-[#382335] text-white font-extrabold" : "relative  rounded px-4 py-2 inline cursor-pointer font-extrabold text-black before:bg-[#382335] hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[3px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100 ")}>
                             <div className="flex items-center justify-center gap-2">
                                 <PiGlobeStandLight size={18} />
                                 <span>My Queries</span>
@@ -87,7 +80,7 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/myRecommendations" className={({ isActive }) => (isActive ? "border-2 border-[#660746] text-[#660746] font-extrabold" : "relative border-2 border-[#F9E2E3]  rounded px-4 py-2 inline cursor-pointer font-extrabold text-[#660746] before:bg-[#660746] hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[3px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100 ")}>
+                        <NavLink to="/myRecommendations" className={({ isActive }) => (isActive ? "bg-[#382335] text-white font-extrabold" : "relative  rounded px-4 py-2 inline cursor-pointer font-extrabold text-black before:bg-[#382335] hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[3px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100 ")}>
                             <div className="flex items-center justify-center gap-2">
                                 <GiChoice size={18} />
                                 <span>My recommendations</span>
@@ -101,10 +94,10 @@ const Navbar = () => {
 
         </>
     );
-    // bg-[#F9E2E3]
+
     return (
         <div>
-            <div className="navbar bg-[#F9E2E3] ">
+            <div className="navbar  ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
