@@ -95,7 +95,7 @@ const RecommendationsForMePage = () => {
 
 
                                     <td className="px-6 py-3 text-sm">
-                                        {singleItem.recommendedReason.slice(0, 90)}
+                                        {singleItem.recommendedReason.slice(0, 50)}
                                         <p className="text-xs text-gray-400 mt-1"></p>
                                     </td>
 

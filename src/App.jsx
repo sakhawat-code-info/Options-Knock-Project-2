@@ -22,7 +22,7 @@ function App() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-4">
           {
-            allQueryData?.slice(0, 5).map(singleData => <QueriesCard key={singleData._id} singleDataComingFromAppJsx={singleData} />)
+            allQueryData?.slice(0, 6).map(singleData => <QueriesCard key={singleData._id} singleDataComingFromAppJsx={singleData} />)
           }
         </div>
 

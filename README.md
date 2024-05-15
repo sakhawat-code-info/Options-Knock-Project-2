@@ -48,3 +48,29 @@ Currently, two official plugins are available:
     -> Feedback mechanism.
     -> Social sharing capabilities.
 
+
+
+
+
+<!-- <section
+      className=" max-w-[1920px] lg:w-[90%] w-[98%] mx-auto font-mont"
+      style={{
+        backgroundImage: `url(${Background})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+
+        width: "100%",
+      }}
+    > -->
+
+
+
+
+
+
+
+
+
+
+

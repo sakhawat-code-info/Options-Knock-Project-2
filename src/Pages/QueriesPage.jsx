@@ -8,36 +8,27 @@ import { useEffect, useState } from "react";
 const QueriesPage = () => {
 
     const allQueryData = useLoaderData();
-    // console.log(allQueryData);
 
+    const [allQueries, setAllQueries] = useState([]);
 
-    const [allQueries, setAllQueries] = useState(allQueryData);
+    useEffect(() => {
+        setAllQueries(allQueryData);
+    }, [allQueryData])
 
-    // for search field 
-    const [searchBy, setSearchBy] = useState('');
 
     const handleSearchField = (e) => {
         e.preventDefault();
         const form = e.target;
         const searchData = form.searchData.value;
-
-        setSearchBy(searchData)
-
+        searchDataFetch(searchData)
     }
 
 
-    // for search data 
-    useEffect(() => {
-        searchDataFetch();
 
-    }, [searchBy])
-
-
-    const searchDataFetch = () => {
-
-        fetch(`https://b9a11-server-side-sakhawat-code-info.vercel.app/allQueryDataBy?productName=${searchBy}`)
-            .then(res => res.json())
-            .then(data => setAllQueries(data))
+    const searchDataFetch = async (searchData) => {
+        const data = await fetch(`https://b9a11-server-side-sakhawat-code-info.vercel.app/allQueryDataBy?productName=${searchData}`)
+        const res = await data.json();
+        setAllQueries(res)
     }
 
     // for layout change
@@ -50,6 +41,11 @@ const QueriesPage = () => {
             setLayout(2)
         }
     }
+
+
+
+
+
 
 
     return (
