@@ -169,9 +169,9 @@ const Navbar = () => {
                                     <details className="group">
 
                                         <summary
-                                            className="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer">
+                                            className="flex items-center justify-between gap-2 p-2 font-medium marker:content-none hover:cursor-pointer" title={user?.displayName}>
 
-                                            <span className="flex gap-2">
+                                            <span className="flex gap-2" >
 
 
                                                 <img className="w-6 h-6 rounded-lg"

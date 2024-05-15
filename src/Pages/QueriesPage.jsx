@@ -117,12 +117,12 @@ const QueriesPage = () => {
                                             </div>
                                             <div className="text-white flex items-center justify-center gap-1">
                                                 <MdPublishedWithChanges />
-                                                <p className="text-white mr-2 text-xl font-extralight">{singleDate.recommendationCount} </p>
+                                                <p className="text-white mr-2 text-xl font-bold">{singleDate.recommendationCount} </p>
                                             </div>
 
                                             <Link to={`/queryDetails/${singleDate._id}`} className="text-white">
                                                 {/* <IoShareSocialOutline size={20} /> */}
-                                                <FcViewDetails size={20} />
+                                                <FcViewDetails size={20} title="View Details" />
 
                                             </Link>
 

@@ -129,16 +129,20 @@ const QueryDetailsPage = () => {
                         </div>
 
                         <div className="flex space-x-1 mt-4">
-                            <svg className="w-5 fill-gray-800" viewBox="0 0 14 13" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                            </svg>
-                            <svg className="w-5 fill-gray-800" viewBox="0 0 14 13" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
-                            </svg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                             <svg className="w-5 fill-gray-800" viewBox="0 0 14 13" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -154,6 +158,17 @@ const QueryDetailsPage = () => {
                                 <path
                                     d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
                             </svg>
+                            <svg className="w-5 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                            </svg>
+                            <svg className="w-5 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+                            </svg>
+
 
                             <button type="button" className="px-2.5 py-1.5 bg-gray-100 text-xs text-gray-800 rounded-md flex items-center !ml-4">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="w-3 mr-1" fill="currentColor" viewBox="0 0 32 32">
@@ -163,6 +178,10 @@ const QueryDetailsPage = () => {
                                 </svg>
                                 {recommendationCount} Recommendation
                             </button>
+
+
+
+
                         </div>
 
                         <div className="mt-4">
