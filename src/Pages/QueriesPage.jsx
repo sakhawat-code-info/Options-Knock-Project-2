@@ -83,7 +83,7 @@ const QueriesPage = () => {
                             <div key={singleDate._id}
                                 className="flex flex-wrap md:flex-nowrap shadow-lg mx-auto bg-[#382335] max-w-3xl group cursor-pointer transform duration-500 hover:-translate-y-1 rounded">
                                 <div className="p-2 w-full flex-1">
-                                    <img className="w-full h-full object-cover" src={singleDate.productImageURL} alt="Article" />
+                                    <img className="w-full h-full " src={singleDate.productImageURL} alt="Article" />
                                 </div>
                                 <div className="sm:p-4 px-2  flex flex-col justify-between flex-1">
                                     <div>

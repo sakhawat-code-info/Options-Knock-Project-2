@@ -142,7 +142,7 @@ const MyQueriesPage = () => {
                                                 {singleData.queryTitle.slice(0, 28)} . . .
                                             </a>
                                             <p className="text-gray-500 text-sm">
-                                                {singleData.boycottingReasonDetails}
+                                                {singleData.boycottingReasonDetails.slice(0, 220)}
                                             </p>
                                         </div>
                                         <div className="px-6 py-4 flex items-center justify-center gap-5">

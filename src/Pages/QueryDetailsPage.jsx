@@ -131,18 +131,6 @@ const QueryDetailsPage = () => {
                         <div className="flex space-x-1 mt-4">
 
 
-
-
-
-
-
-
-
-
-
-
-
-
                             <svg className="w-5 fill-gray-800" viewBox="0 0 14 13" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path

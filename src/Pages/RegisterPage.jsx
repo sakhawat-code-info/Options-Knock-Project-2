@@ -3,6 +3,7 @@ import UseAuth from "../hookPersonal/UseAuth";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
 import 'react-toastify/dist/ReactToastify.css';
+import register from '../assets/register.png'
 
 const RegisterPage = () => {
 
@@ -66,7 +67,7 @@ const RegisterPage = () => {
 
     return (
         <div className="py-16">
-            <div className="flex rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
+            <div className="flex rounded-lg shadow-2xl overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
 
                 <div className="w-full p-8 lg:w-1/2">
                     <h2 className="text-2xl font-semibold text-gray-700 text-center">Thank you</h2>
@@ -101,11 +102,15 @@ const RegisterPage = () => {
                     <div className="mt-4 flex items-center justify-between">
                         <span className="border-b w-1/5 md:w-1/4"></span>
                         <Link to={'/login'} className="text-xs text-gray-500 uppercase">or
-                            <span className="link link-primary"> Login</span> </Link>
+                            <span className="link link-primary font-extrabold"> Login</span> </Link>
                         <span className="border-b w-1/5 md:w-1/4"></span>
                     </div>
                 </div>
-                <div className="hidden lg:block lg:w-1/2 bg-contain bg-center bg-no-repeat bg-[url('https://img.freepik.com/free-vector/completed-steps-concept-illustration_114360-5521.jpg?t=st=1715235788~exp=1715239388~hmac=48f1bcd2546e98b1cdb89cac225952fdf56c85fa442a1fd78208a1eddaaed8a4&w=740')]">
+                {/* <div className="hidden lg:block lg:w-1/2 bg-contain bg-center bg-no-repeat bg-[url('https://img.freepik.com/free-vector/completed-steps-concept-illustration_114360-5521.jpg?t=st=1715235788~exp=1715239388~hmac=48f1bcd2546e98b1cdb89cac225952fdf56c85fa442a1fd78208a1eddaaed8a4&w=740')]"> */}
+                <div className="hidden lg:block lg:w-1/2 bg-contain">
+
+                    <img src={register} alt="register img" />
+
                 </div>
             </div>
             <ToastContainer />
