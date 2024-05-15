@@ -71,7 +71,7 @@ const RegisterPage = () => {
 
                 <div className="w-full p-8 lg:w-1/2">
                     <h2 className="text-2xl font-semibold text-gray-700 text-center">Thank you</h2>
-                    <p className="text-xl text-gray-600 text-center capitalize">Your choice is best pls registration!</p>
+                    <p className="text-xl text-gray-600 text-center capitalize">Your choice is best please registration!</p>
 
                     <form onSubmit={handleRegisterForm}>
                         <div className="mt-4">
