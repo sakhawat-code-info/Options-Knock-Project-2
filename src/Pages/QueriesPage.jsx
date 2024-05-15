@@ -53,9 +53,15 @@ const QueriesPage = () => {
                             <input type="text" placeholder="Search here" name="searchData"
                                 className="w-full rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-transparent" />
                             <button type="submit"
-                                className="bg-gray-800 text-white rounded-md px-4 py-1 ml-2 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">
+                                className="bg-[#0a3d62] text-white rounded-md px-4 py-1 ml-2 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50">
                                 Search
                             </button>
+
+                            {/* <button type="button"
+                                        className="px-6 py-2 rounded text-white text-sm tracking-wider font-medium outline-none border-2 border-[#0a3d62] bg-[#0a3d62] hover:bg-transparent hover:text-black transition-all duration-300">
+                                        Search
+                                    </button> */}
+
                         </form>
                     </div>
 
@@ -75,7 +81,7 @@ const QueriesPage = () => {
                     {
                         allQueries?.map(singleDate =>
                             <div key={singleDate._id}
-                                className="flex flex-wrap md:flex-nowrap shadow-lg mx-auto bg-[#382335] max-w-3xl group cursor-pointer transform duration-500 hover:-translate-y-1">
+                                className="flex flex-wrap md:flex-nowrap shadow-lg mx-auto bg-[#382335] max-w-3xl group cursor-pointer transform duration-500 hover:-translate-y-1 rounded">
                                 <div className="p-2 w-full flex-1">
                                     <img className="w-full h-full object-cover" src={singleDate.productImageURL} alt="Article" />
                                 </div>

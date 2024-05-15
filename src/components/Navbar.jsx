@@ -4,7 +4,10 @@ import { GiChoice } from "react-icons/gi";
 import { PiGlobeStandLight } from "react-icons/pi";
 
 import { Link, NavLink } from "react-router-dom";
-import logo from '../assets/logo.svg';
+import logo2 from '../assets/logo2-removebg-preview.png';
+
+
+
 import UseAuth from "../hookPersonal/UseAuth";
 import { useEffect, useState } from "react";
 
@@ -120,14 +123,14 @@ const Navbar = () => {
                             {navLink}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">
+                    <Link to={'/'} className="btn btn-ghost text-xl">
                         <p className="text-[18px] font-medium text-white">
                             <h1 className="text-black font-extrabold flex items-center justify-center">
-                                <img className="w-10 h-10" src={logo} alt="Pic" />
-                                Quick&nbsp;<span className="text-rose-600">Think</span>
+                                <img className="w-10 h-10" src={logo2} alt="Pic" />
+                                Options&nbsp;<span className="text-rose-600">Knock</span>
                             </h1>
                         </p>
-                    </a>
+                    </Link>
                 </div>
 
 
@@ -238,9 +241,10 @@ const Navbar = () => {
                                 </li>
                             </ul>
                         </> : <>
-                            <div className="rounded-full bg-gradient-to-tr from-[#660746] via-[#660746]  to-[#660746] p-1  shadow-lg w-28">
+                            <div className="">
                                 <Link to={'/login'}>
-                                    <button className="font-bold bg-white px-4 rounded-full ">
+                                    <button type="button"
+                                        className="px-6 py-2 rounded text-white text-sm tracking-wider font-medium outline-none border-2 border-[#0a3d62] bg-[#0a3d62] hover:bg-transparent hover:text-black transition-all duration-300">
                                         Login
                                     </button>
                                 </Link>

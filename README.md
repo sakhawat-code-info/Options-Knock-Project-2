@@ -23,13 +23,17 @@ Currently, two official plugins are available:
 
 - Features : 
     -> Home page
-    -> Add data page
-    -> update and delete page
+    -> Add data upload update and delete
+    -> View details 
     -> User Profile
     -> Sign In, Login page, 
     -> Google login system
     -> Footer 
+    -> Error page 
+    -> Recommendation function  
 
+
+    
 
 - Characteristics : 
     -> Comprehensive database of alternative products.
@@ -70,6 +74,8 @@ Currently, two official plugins are available:
    bg-[#82afb5]
 
 
+
+bg-[#0a3d62]
 
 
 

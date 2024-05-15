@@ -66,8 +66,8 @@ const LoginPage = () => {
 
     return (
         <div className="py-16">
-            <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
-                <div className="hidden lg:block lg:w-1/2 bg-contain bg-center bg-no-repeat bg-[url('https://img.freepik.com/free-vector/security-concept-illustration_114360-1528.jpg?t=st=1715236127~exp=1715239727~hmac=bdaf3c71a24ad112d1f31f2ee780a328c8560c5c92ac21067a1b4735db7225de&w=740')]">
+            <div className="flex  rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
+                <div className="hidden rounded-2xl lg:block lg:w-1/2 bg-contain bg-center bg-no-repeat bg-[url('https://img.freepik.com/free-vector/security-concept-illustration_114360-1528.jpg?t=st=1715236127~exp=1715239727~hmac=bdaf3c71a24ad112d1f31f2ee780a328c8560c5c92ac21067a1b4735db7225de&w=740')]">
                 </div>
                 <div className="w-full p-8 lg:w-1/2">
                     <h2 className="text-2xl font-semibold text-gray-700 text-center">Login Now</h2>

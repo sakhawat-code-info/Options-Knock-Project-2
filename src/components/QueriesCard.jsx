@@ -38,7 +38,7 @@ const QueriesCard = ({ singleDataComingFromAppJsx }) => {
                 <div className="flex items-center justify-between">
                     <span className="font-bold text-lg">Alternative items : {recommendationCount}</span>
                     <Link to={`/queryDetails/${_id}`} >
-                        <button className="text-red hover:before:bg-redborder-red-500 relative h-[50px] w-24 md:w-40 overflow-hidden border border-red-500 bg-white px-3 text-red-500 shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-red-500 before:transition-all before:duration-500 hover:text-white hover:shadow-red-500 hover:before:left-0 hover:before:w-full">
+                        <button className="text-red hover:before:bg-redborder-red-500 relative h-[50px] w-24 md:w-36 overflow-hidden border border-[#0a3d62] bg-white px-3 text-[#0a3d62] shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-[#0a3d62] before:transition-all before:duration-500 hover:text-white hover:shadow-[#0a3d62]hover:before:left-0 hover:before:w-full font-extrabold">
                             <span className="relative z-10">View Details</span>
                         </button>
                     </Link>

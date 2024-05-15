@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { MdOutlineDeleteForever } from "react-icons/md";
 import Swal from "sweetalert2";
 import UseAuth from "../hookPersonal/UseAuth";
 
@@ -14,7 +13,7 @@ const MyRecommendationsPage = () => {
         fetch(`https://b9a11-server-side-sakhawat-code-info.vercel.app/showRecommendationThatDoneByMe/${user.email}`, { credentials: "include" })
             .then(res => res.json())
             .then(data => setRecommendationThatDoneByMe(data))
-    }, [])
+    }, [user.email])
 
 
     // https://b9a11-server-side-sakhawat-code-info.vercel.app
@@ -63,20 +62,18 @@ const MyRecommendationsPage = () => {
         <div>
 
 
-            <div className="max-w-3xl mx-auto text-center mt-10">
-                <h1 className="text-4xl font-bold text-gray-900 leading-tight mb-2 pb-4 relative">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500">Your Alternative Recommendations</span>
-                    <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500"></span>
+            <div className="max-w-3xl mx-auto text-center mt-4">
+                <h1 className="text-2xl font-bold text-gray-900 leading-tight mb-2 pb-4 relative">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0a3d62] to-[#0a3d62]">Your Alternative Recommendations</span>
+                    <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#0a3d62] to-[#0a3d62]"></span>
                 </h1>
                 {/* <p className="text-lg text-gray-800 mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
             </div>
 
 
-
-
             <div className="overflow-x-auto py-8">
-                <table className="min-w-full bg-white font-[sans-serif]">
-                    <thead className="whitespace-nowrap bg-gray-100 rounded">
+                <table className="min-w-full bg-[#82afb5] text-black font-[sans-serif]">
+                    <thead className="whitespace-nowrap bg-gray-300 rounded">
                         <tr>
                             <th className="px-6 py-4 text-left text-sm font-semibold text-black">
                                 Date & Time
@@ -99,26 +96,29 @@ const MyRecommendationsPage = () => {
                                 <tr key={singleItem._id} className="hover:bg-gray-50">
                                     <td className="px-6 py-3 text-sm">
                                         {singleItem.currentTimeStamp}
-                                        <p className="text-xs text-gray-400 mt-1">Posted</p>
+                                        <p className="text-xs text-black mt-1">Posted</p>
                                     </td>
                                     <td className="px-6 py-3 text-sm">
                                         <div className="flex items-center cursor-pointer">
                                             <img src={singleItem.recommendedProductImage} className="w-9 h-9 rounded-md shrink-0" />
                                             <div className="ml-4">
                                                 <p className="text-sm text-black">{singleItem.recommendationTitle}</p>
-                                                <p className="text-xs text-gray-400 mt-1">{singleItem.recommendedProductName}</p>
+                                                <p className="text-xs text-black mt-1">{singleItem.recommendedProductName}</p>
                                             </div>
                                         </div>
                                     </td>
                                     <td className="px-6 py-3 text-sm">
                                         {singleItem.recommendedReason.slice(0, 90)}
-                                        <p className="text-xs text-gray-400 mt-1"></p>
+                                        <p className="text-xs text-black mt-1"></p>
                                     </td>
 
                                     <td className="px-6 py-3 text-sm">
-                                        <button onClick={() => handleDeleteRecommendation(singleItem._id, singleItem.queryId)} className="flex items-center p-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
+                                        {/* <button onClick={() => handleDeleteRecommendation(singleItem._id, singleItem.queryId)} className="flex items-center p-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">
                                             <MdOutlineDeleteForever size={20} />
-                                        </button>
+                                        </button> */}
+
+
+                                        <button onClick={() => handleDeleteRecommendation(singleItem._id, singleItem.queryId)} className="px-4 py-2 font-medium text-white bg-red-800 rounded-md hover:bg-[#0a3d62] focus:outline-none focus:shadow-outline-blue active:bg-blue-600 transition duration-150 ease-in-out">Delete</button>
                                     </td>
 
                                 </tr>

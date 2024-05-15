@@ -114,7 +114,7 @@ const QueryDetailsPage = () => {
                 <div className=" gap-10">
                     <div className="space-y-4 text-center ">
                         <div className="bg-gray-100 p-4 flex items-center sm:h-[380px] rounded">
-                            <img src={productImageURL} alt="Product" className="w-full max-h-full object-contain object-top" />
+                            <img src={productImageURL} alt="Product" className="w-full max-h-full rounded-xl object-contain object-top" />
                         </div>
 
 
@@ -199,7 +199,7 @@ const QueryDetailsPage = () => {
                         </div>
 
 
-                        <form onSubmit={handleRecommendationData} className="bg-white shadow-md rounded px-8 py-6 mt-4">
+                        <form onSubmit={handleRecommendationData} className=" border-4 rounded-lg shadow px-8 py-6 mt-4">
 
                             <h3 className="font-os text-lg font-bold text-center">Alternative Information </h3>
 
@@ -314,54 +314,14 @@ const QueryDetailsPage = () => {
                                         </div>
                                     </div>
 
-
-
-
-
-
                                 )
                             }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                             <div className="flex items-center justify-center mt-10">
                                 <a className="inline-block align-baseline font-bold text-sm text-teal-500 hover:text-teal-800" href="#">
-                                    Show me Your Alternative Information
+                                    Put Your Alternative Information
                                 </a>
                             </div>
 
@@ -398,23 +358,8 @@ const QueryDetailsPage = () => {
                                 </div>
 
 
-
-
-
-
-
-
                                 {/* <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="recommendedProductName" type="text" placeholder="Recommended product Name" required /> */}
                             </div>
-
-
-
-
-
-
-
-
-
 
                             <div className="mb-4">
                                 <label className="block text-gray-700 text-sm font-bold mb-2">Product Image :</label>
@@ -429,9 +374,14 @@ const QueryDetailsPage = () => {
                                 </div>
 
                                 <div className="flex items-center justify-center mt-8 md:w-2/5">
-                                    <button className="bg-teal-500 hover:bg-teal-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                                    <button className="bg-[#0a3d62] hover:bg-[#6a9bc3] text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                                         Add Recommendation
                                     </button>
+
+
+
+
+
                                 </div>
                             </div>
 

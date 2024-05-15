@@ -1,23 +1,25 @@
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo2-removebg-preview.png';
 
 
 // bg-teal-800
+// bg-[#382335]
 
 const Footer = () => {
     return (
-        <div className="mt-8 bg-[#382335] pt-9 text-black">
+        <div className="mt-8 bg-[#0a3d62] pt-9 text-black">
+
             <div className="mx-auto w-full max-w-[1166px] px-4 xl:px-0">
 
-                <div className="flex flex-col justify-center  lg:justify-between sm:px-[18px] md:flex-row md:px-10">
-                    <div className="md:w-[316px]">
+                <div className="grid grid-cols-3 md:grid-cols-9 md:gap-7 items-center justify-center sm:px-[18px] md:flex-row md:px-10">
+                    <div className="col-span-3">
                         <p className="text-[18px] font-medium text-white">
                             <h1 className="text-white font-extrabold flex items-center">
                                 <img className="w-10 h-10" src={logo} alt="Pic" />
-                                Quick&nbsp;<span className="text-rose-600">Think</span>
+                                Options&nbsp;<span className="text-rose-600">Knock</span>
                             </h1>
                         </p>
-                        <p className="mt-[18px] text-[15px] font-normal text-white/[80%] text-justify">Welcome to Quick Thing, your ultimate destination for swift solutions and efficient outcomes. At Quick Thing, we understand the value of time and the importance of getting things done quickly. Whether you are looking to streamline your workflow, solve complex problems, or find rapid solutions to everyday challenges, Quick Thing is here to help.</p>
-                        <div className="mt-[18px] flex gap-4">
+                        <p className="mt-[18px] text-[15px] font-normal text-white/[80%] text-justify">Welcome to Options Knock, your ultimate destination for swift solutions and efficient outcomes. At Quick Thing, we understand the value of time and the importance of getting things done quickly. Whether you are looking to streamline your workflow, solve complex problems, or find rapid solutions to everyday challenges, Quick Thing is here to help.</p>
+                        <div className="mt-[18px] flex items-center gap-4">
 
                             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                                 <img src="https://img.icons8.com/fluent/30/000000/facebook-new.png" />
@@ -38,10 +40,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-
-
-
-                    <div className="md:w-[316px]">
+                    <div className="col-span-3">
                         <div className="mt-[23px] flex">
                             <div className="flex h-[38px] w-[38px] items-center justify-center rounded-[75%]">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +84,7 @@ const Footer = () => {
                     </div>
 
 
-                    <div className="mt-6 flex w-full flex-col justify-between text-white sm:flex-row md:mt-0 md:max-w-[341px]">
+                    <div className="col-span-3  mt-6 flex w-full flex-col  lg:justify-between text-white sm:flex-row md:mt-0 md:max-w-[341px]">
                         <div className="">
                             <p className="text-white font-inter text-[18px] font-medium leading-normal">Pages</p>
                             <ul>
@@ -128,14 +127,19 @@ const Footer = () => {
 
 
                 <hr className="mt-[30px] text-white" />
+
                 <div className="flex items-center justify-center pb-8 pt-[9px] md:py-8">
                     <p className="text-[10px] font-normal text-white md:text-[12px]">
                         © Copyright
                         2024
-                        , All Rights Reserved by <span className="font-extrabold">Quick Think </span> corporation
+                        , All Rights Reserved by <span className="font-extrabold">Options Knock</span>.com
                     </p>
                 </div>
+
+
             </div>
+
+
         </div>
     );
 };
