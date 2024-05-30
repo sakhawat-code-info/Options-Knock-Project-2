@@ -1,7 +1,7 @@
 import logo from '../assets/logo2-removebg-preview.png';
 
 
-// bg-teal-800
+// bg-teal-800 
 // bg-[#382335]
 
 const Footer = () => {

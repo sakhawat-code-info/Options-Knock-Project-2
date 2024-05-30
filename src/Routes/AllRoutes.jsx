@@ -12,6 +12,8 @@ import PrivateRoute from "./PrivateRoute";
 import AddQueriesPage from "../Pages/AddQueriesPage";
 import QueryDetailsPage from "../Pages/QueryDetailsPage";
 import UpdateQueriesPage from "../Pages/UpdateQueriesPage";
+import UserReview from "../Pages/UserReview";
+
 
 export const router = createBrowserRouter([
     {
@@ -62,6 +64,11 @@ export const router = createBrowserRouter([
             {
                 path: "/register",
                 element: <RegisterPage />,
+            },
+            {
+                path: "/userReview",
+                element: <UserReview />,
+                loader: () => fetch('https://b9a11-server-side-sakhawat-code-info.vercel.app/allReviews')
             },
         ],
     },

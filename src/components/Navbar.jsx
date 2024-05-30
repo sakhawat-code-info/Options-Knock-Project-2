@@ -2,7 +2,7 @@ import { IoHomeOutline } from "react-icons/io5";
 import { MdCompare } from "react-icons/md";
 import { GiChoice } from "react-icons/gi";
 import { PiGlobeStandLight } from "react-icons/pi";
-
+import { MdOutlineRateReview } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
 import logo2 from '../assets/logo2-removebg-preview.png';
 
@@ -64,6 +64,7 @@ const Navbar = () => {
                 </NavLink>
             </li>
 
+
             {
                 user && <>
                     <li>
@@ -90,10 +91,18 @@ const Navbar = () => {
                             </div>
                         </NavLink>
                     </li>
-
+                    <li>
+                        <NavLink to="/userReview" className={({ isActive }) => (isActive ? "bg-[#382335] text-white font-extrabold" : "relative  rounded px-4 py-2 inline cursor-pointer font-extrabold text-black before:bg-[#382335] hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[3px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100 ")}>
+                            <div className="flex items-center justify-center gap-2">
+                                <MdOutlineRateReview size={18} />
+                                <span>Review</span>
+                            </div>
+                        </NavLink>
+                    </li>
 
                 </>
             }
+
 
         </>
     );

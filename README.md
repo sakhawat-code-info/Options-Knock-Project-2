@@ -11,12 +11,20 @@ Currently, two official plugins are available:
 
 <!-- for submission  -->
 
-- Assignment ID/Variant: assignment_category_0009
+- Assignment ID/Variant: Assignment_Category_0009
 - Client-side code GitHub repository : https://github.com/Porgramming-Hero-web-course/b9a11-client-side-sakhawat-code-info
 - Server-side code GitHub repository : https://github.com/Porgramming-Hero-web-course/b9a11-server-side-sakhawat-code-info
 - Live website URL link : https://b9a11-client-side.web.app
 
 
+https://github.com/Porgramming-Hero-web-course/b9a11-client-side-sakhawat-code-info
+https://github.com/Porgramming-Hero-web-course/b9a11-server-side-sakhawat-code-info
+(UserReview.jsx)
+
+
+User Review
+. User can see other users review about this website
+. User can also post a review
 
 
 
@@ -53,33 +61,4 @@ Currently, two official plugins are available:
     -> Social sharing capabilities.
 
 
-
-
-
-<!-- <section
-      className=" max-w-[1920px] lg:w-[90%] w-[98%] mx-auto font-mont"
-      style={{
-        backgroundImage: `url(${Background})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-
-        width: "100%",
-      }}
-    > -->
-
-   // bg-[#382335]  bg
-   
-   
-   bg-[#82afb5]
-
-
-
-bg-[#0a3d62]
-
-
-
-
-
-
-
+Thank you
