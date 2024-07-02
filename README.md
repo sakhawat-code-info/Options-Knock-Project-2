@@ -1,35 +1,19 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-
-
-<!-- for submission  -->
-
-- Assignment ID/Variant: Assignment_Category_0009
-- Client-side code GitHub repository : https://github.com/Porgramming-Hero-web-course/b9a11-client-side-sakhawat-code-info
-- Server-side code GitHub repository : https://github.com/Porgramming-Hero-web-course/b9a11-server-side-sakhawat-code-info
+# Demo
 - Live website URL link : https://b9a11-client-side.web.app
 
+# How to Install
+- First Clone or download then
+- git clone https://github.com/Porgramming-Hero-web-course/b9a11-client-side-sakhawat-code-info
+- git clone https://github.com/Porgramming-Hero-web-course/b9a11-server-side-sakhawat-code-info
+- npm i
+- npm run dev
 
-https://github.com/Porgramming-Hero-web-course/b9a11-client-side-sakhawat-code-info
-https://github.com/Porgramming-Hero-web-course/b9a11-server-side-sakhawat-code-info
-(UserReview.jsx)
-
-
-User Review
+# Website catagory
+- You can comparison product
 . User can see other users review about this website
 . User can also post a review
 
-
-
-
-- Features : 
+# Features : 
     -> Home page
     -> Add data upload update and delete
     -> View details 
@@ -40,10 +24,7 @@ User Review
     -> Error page 
     -> Recommendation function  
 
-
-    
-
-- Characteristics : 
+# Characteristics : 
     -> Comprehensive database of alternative products.
     -> Search functionality by category, brand, price range, and features.
     -> Product comparison feature.
